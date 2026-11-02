@@ -2,13 +2,7 @@
 
 **STM32 기반 드론 비행제어 시스템을 회로 설계부터 제어 모델·펌웨어·실제 시험까지 연결하는 개인 개발 프로젝트입니다.**
 
-`STM32-Flight-System`은 전체 시스템의 저장소 이름이며, `LKM_FC_V1`은 직접 설계한 Flight Controller PCB의 모델명입니다. 내부 Altium 프로젝트 이름은 `LKM`입니다.
-
 **현재 단계 · 2026-11-02:** 하드웨어 설계 및 R10/R11 제조 데이터의 로컬 정합성 검토를 마쳤습니다. PCB 제조·SMT는 Global Sourcing 부품 입고와 제조사 수락·공정 승인 대기 상태입니다. 제어 모델, 프로젝트 펌웨어 통합, 실제 보드 동작 및 비행 검증은 앞으로 진행합니다.
-
-[회로도 PDF](hardware/LKM_FC_V1/schematic/LKM_FC_V1_Schematic.pdf) · [PCB Layout PDF](hardware/LKM_FC_V1/pcb-layout/LKM_FC_V1_PCB_Layout.pdf) · [Assembly BOM PDF](hardware/LKM_FC_V1/bom/LKM_FC_V1_BOM.pdf)
-
-3D View 이미지는 이번 공개 구성에서 제외했습니다. 실제 원본 이미지를 확보한 뒤 추가할 수 있도록 폴더만 유지합니다.
 
 ## Contents
 
