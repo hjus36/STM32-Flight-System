@@ -1,0 +1,101 @@
+# Local audit records and machine-specific preparation files (not portfolio content)
+.local/
+GitHub_Organization_Report.md
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+.codex/
+.agents/
+.aws/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# CAD sources, private libraries and native temporary/export workspaces
+*.SchDoc
+*.PcbDoc
+*.PrjPcb
+*.PrjPcbStructure
+*.SchLib
+*.PcbLib
+*.IntLib
+*.LibPkg
+*.OutJob
+*.PrjScr
+*.PcbDocPreview
+*.SchDocPreview
+*.DsnWrk
+*.SchDocStructure
+History/
+__History/
+__Previews/
+Project Logs*/
+Project Outputs*/
+*.bak
+*.tmp
+*.lck
+*.log
+
+# Manufacturing delivery packages remain in the private project
+*.zip
+*.7z
+*.rar
+*.gbr
+*.gbl
+*.gtl
+*.gbs
+*.gts
+*.gbp
+*.gtp
+*.gbo
+*.gto
+*.gm1
+*.drl
+*.step
+*.stp
+
+# Python / embedded build output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+Build/
+Debug/
+Release/
+*.o
+*.obj
+*.a
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.d
+*.su
+
+# MATLAB / Simulink caches, not source models or evidence
+slprj/
+*_ert_rtw/
+*_grt_rtw/
+codegen/
+*.slxc
+*.slx.autosave
+*.asv
+*.mex*
+
+# Large raw videos: publish a reviewed link or a deliberately selected artifact later
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Intentionally KEEP public PDF/PNG/GIF, MATLAB .m, Simulink .slx,
+# future measured CSV logs and selected generated C source.
