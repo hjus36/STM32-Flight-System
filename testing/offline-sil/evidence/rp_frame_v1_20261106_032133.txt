@@ -1,0 +1,598 @@
+BUILD frame_fixture: 0
+
+RUN frame_fixture: 0
+PASS 001 default BNO identity proper
+
+PASS 002 default ICM identity proper
+
+PASS 003 default axes not approved
+
+PASS 004 NULL mount rejected
+
+PASS 005 NULL ctx rejected
+
+PASS 006 NULL config rejected
+
+PASS 007 default locked init
+
+PASS 008 production or unverified fixture rejects pose
+
+PASS 009 rejected output zero
+
+PASS 010 NULL output rejected
+
+PASS 011 NULL ctx rejected on observe
+
+PASS 012 init clears approved state
+
+PASS 013 known result text
+
+PASS 014 unknown result text
+
+PASS 015 reflection det -1 rejected
+
+PASS 016 matrix entry +2 rejected
+
+PASS 017 row duplicate rejected
+
+PASS 018 missing column rejected
+
+PASS 019 right-handed Z+90 accepted
+
+PASS 020 invalid BNO mounting rejects init
+
+PASS 021 invalid gyro mounting rejects init
+
+PASS 022 unknown BNO report rejects init
+
+PASS 023 zero skew rejects init
+
+PASS 024 NaN config rejects init
+
+PASS 025 invalid accuracy rejects init
+
+PASS 026 zero BNO age rejects init
+
+PASS 027 out-of-range gyro TTL rejects init
+
+PASS 028 out-of-range pitch rejects init
+
+PASS 029 permutation parity determinant validation
+
+PASS 030 permutation parity determinant validation
+
+PASS 031 permutation parity determinant validation
+
+PASS 032 permutation parity determinant validation
+
+PASS 033 permutation parity determinant validation
+
+PASS 034 permutation parity determinant validation
+
+PASS 035 permutation parity determinant validation
+
+PASS 036 permutation parity determinant validation
+
+PASS 037 permutation parity determinant validation
+
+PASS 038 permutation parity determinant validation
+
+PASS 039 permutation parity determinant validation
+
+PASS 040 permutation parity determinant validation
+
+PASS 041 permutation parity determinant validation
+
+PASS 042 permutation parity determinant validation
+
+PASS 043 permutation parity determinant validation
+
+PASS 044 permutation parity determinant validation
+
+PASS 045 permutation parity determinant validation
+
+PASS 046 permutation parity determinant validation
+
+PASS 047 permutation parity determinant validation
+
+PASS 048 permutation parity determinant validation
+
+PASS 049 permutation parity determinant validation
+
+PASS 050 permutation parity determinant validation
+
+PASS 051 permutation parity determinant validation
+
+PASS 052 permutation parity determinant validation
+
+PASS 053 permutation parity determinant validation
+
+PASS 054 permutation parity determinant validation
+
+PASS 055 permutation parity determinant validation
+
+PASS 056 permutation parity determinant validation
+
+PASS 057 permutation parity determinant validation
+
+PASS 058 permutation parity determinant validation
+
+PASS 059 permutation parity determinant validation
+
+PASS 060 permutation parity determinant validation
+
+PASS 061 permutation parity determinant validation
+
+PASS 062 permutation parity determinant validation
+
+PASS 063 permutation parity determinant validation
+
+PASS 064 permutation parity determinant validation
+
+PASS 065 permutation parity determinant validation
+
+PASS 066 permutation parity determinant validation
+
+PASS 067 permutation parity determinant validation
+
+PASS 068 permutation parity determinant validation
+
+PASS 069 permutation parity determinant validation
+
+PASS 070 permutation parity determinant validation
+
+PASS 071 permutation parity determinant validation
+
+PASS 072 permutation parity determinant validation
+
+PASS 073 permutation parity determinant validation
+
+PASS 074 permutation parity determinant validation
+
+PASS 075 permutation parity determinant validation
+
+PASS 076 permutation parity determinant validation
+
+PASS 077 exactly 24 proper 90-degree mounts
+
+PASS 078 exactly 24 reflections rejected
+
+PASS 079 fixture approved init
+
+PASS 080 time-pair output always controller off
+
+PASS 081 fixture identity pair accepted
+
+PASS 082 identity roll correct
+
+PASS 083 identity pitch correct
+
+PASS 084 identity yaw correct
+
+PASS 085 gyro X is body p
+
+PASS 086 gyro Y is body q
+
+PASS 087 gyro Z retained
+
+PASS 088 Feedback Gate output valid in synthetic fixture
+
+PASS 089 Feedback Gate rad angle
+
+PASS 090 Feedback Gate rate rad/s
+
+PASS 091 no controller readiness
+
+PASS 092 accepted pair counter
+
+PASS 093 raw pair unmodified
+
+PASS 094 duplicate counter rejected
+
+PASS 095 rejected output zero
+
+PASS 096 fresh both counters accepted
+
+PASS 097 accepted count increases
+
+PASS 098 stale gyro counter rejected even when BNO new
+
+PASS 099 stale BNO counter rejected even when gyro new
+
+PASS 100 rejected duplicate doesn't poison new pair
+
+PASS 101 both ages bound
+
+PASS 102 output records original counters
+
+PASS 103 BNO stale rejected
+
+PASS 104 rejected output zero
+
+PASS 105 gyro stale rejected
+
+PASS 106 future BNO rejected
+
+PASS 107 bad time pair ready flag rejected
+
+PASS 108 invalid gyro sample rejected
+
+PASS 109 wrong BNO report rejected
+
+PASS 110 low BNO quality rejected
+
+PASS 111 NaN quaternion rejected
+
+PASS 112 non-unit quaternion rejected
+
+PASS 113 inconsistent quaternion/Euler rejected
+
+PASS 114 Inf gyro rejected
+
+PASS 115 large roll rejected by original Feedback Gate
+
+PASS 116 rejected output zero
+
+PASS 117 excessive rate rejected by Feedback Gate
+
+PASS 118 recover on new valid pair
+
+PASS 119 gate acceptance resets for last failure
+
+PASS 120 synthetic independent Z+90 matrices valid
+
+PASS 121 Z+90 cfg init
+
+PASS 122 Z+90 BNO quaternion and ICM raw vector accepted
+
+PASS 123 Z+90 BNO roll restored
+
+PASS 124 Z+90 BNO pitch restored
+
+PASS 125 Z+90 BNO yaw restored
+
+PASS 126 Z+90 gyro body p = -sensor_y
+
+PASS 127 Z+90 gyro body q = sensor_x
+
+PASS 128 Z+90 gyro body r preserved
+
+PASS 129 Z+90 frame still not motor ready
+
+PASS 130 independent mount cfg accepted
+
+PASS 131 independent mount pair accepted
+
+PASS 132 BNO identity unaffected by ICM mounting
+
+PASS 133 gyro mount still applies
+
+PASS 134 180 x proper rotation
+
+PASS 135 180 x init
+
+PASS 136 180x quaternion right-multiply inversion
+
+PASS 137 180x body roll restored
+
+PASS 138 180x body pitch restored
+
+PASS 139 wrap reinit
+
+PASS 140 tick wrap receipt accepted
+
+PASS 141 monotonic counter near wrap accepted
+
+=== LKM RP FRAME CONTRACT: 141/141 PASS ===
+
+
+BUILD frame_production: 0
+
+RUN frame_production: 0
+PASS 001 default BNO identity proper
+
+PASS 002 default ICM identity proper
+
+PASS 003 default axes not approved
+
+PASS 004 NULL mount rejected
+
+PASS 005 NULL ctx rejected
+
+PASS 006 NULL config rejected
+
+PASS 007 default locked init
+
+PASS 008 production or unverified fixture rejects pose
+
+PASS 009 rejected output zero
+
+PASS 010 NULL output rejected
+
+PASS 011 NULL ctx rejected on observe
+
+PASS 012 init clears approved state
+
+PASS 013 known result text
+
+PASS 014 unknown result text
+
+PASS 015 reflection det -1 rejected
+
+PASS 016 matrix entry +2 rejected
+
+PASS 017 row duplicate rejected
+
+PASS 018 missing column rejected
+
+PASS 019 right-handed Z+90 accepted
+
+PASS 020 invalid BNO mounting rejects init
+
+PASS 021 invalid gyro mounting rejects init
+
+PASS 022 unknown BNO report rejects init
+
+PASS 023 zero skew rejects init
+
+PASS 024 NaN config rejects init
+
+PASS 025 invalid accuracy rejects init
+
+PASS 026 zero BNO age rejects init
+
+PASS 027 out-of-range gyro TTL rejects init
+
+PASS 028 out-of-range pitch rejects init
+
+PASS 029 permutation parity determinant validation
+
+PASS 030 permutation parity determinant validation
+
+PASS 031 permutation parity determinant validation
+
+PASS 032 permutation parity determinant validation
+
+PASS 033 permutation parity determinant validation
+
+PASS 034 permutation parity determinant validation
+
+PASS 035 permutation parity determinant validation
+
+PASS 036 permutation parity determinant validation
+
+PASS 037 permutation parity determinant validation
+
+PASS 038 permutation parity determinant validation
+
+PASS 039 permutation parity determinant validation
+
+PASS 040 permutation parity determinant validation
+
+PASS 041 permutation parity determinant validation
+
+PASS 042 permutation parity determinant validation
+
+PASS 043 permutation parity determinant validation
+
+PASS 044 permutation parity determinant validation
+
+PASS 045 permutation parity determinant validation
+
+PASS 046 permutation parity determinant validation
+
+PASS 047 permutation parity determinant validation
+
+PASS 048 permutation parity determinant validation
+
+PASS 049 permutation parity determinant validation
+
+PASS 050 permutation parity determinant validation
+
+PASS 051 permutation parity determinant validation
+
+PASS 052 permutation parity determinant validation
+
+PASS 053 permutation parity determinant validation
+
+PASS 054 permutation parity determinant validation
+
+PASS 055 permutation parity determinant validation
+
+PASS 056 permutation parity determinant validation
+
+PASS 057 permutation parity determinant validation
+
+PASS 058 permutation parity determinant validation
+
+PASS 059 permutation parity determinant validation
+
+PASS 060 permutation parity determinant validation
+
+PASS 061 permutation parity determinant validation
+
+PASS 062 permutation parity determinant validation
+
+PASS 063 permutation parity determinant validation
+
+PASS 064 permutation parity determinant validation
+
+PASS 065 permutation parity determinant validation
+
+PASS 066 permutation parity determinant validation
+
+PASS 067 permutation parity determinant validation
+
+PASS 068 permutation parity determinant validation
+
+PASS 069 permutation parity determinant validation
+
+PASS 070 permutation parity determinant validation
+
+PASS 071 permutation parity determinant validation
+
+PASS 072 permutation parity determinant validation
+
+PASS 073 permutation parity determinant validation
+
+PASS 074 permutation parity determinant validation
+
+PASS 075 permutation parity determinant validation
+
+PASS 076 permutation parity determinant validation
+
+PASS 077 exactly 24 proper 90-degree mounts
+
+PASS 078 exactly 24 reflections rejected
+
+PASS 079 production cannot enable any verified config
+
+PASS 080 failed init clears prior state
+
+PASS 081 production locked config init accepted
+
+PASS 082 production observe is always unverified
+
+PASS 083 rejected output zero
+
+=== LKM RP FRAME CONTRACT: 83/83 PASS ===
+
+
+BUILD sh2_actual: 0
+
+RUN sh2_actual: 0
+PASS 01 actual SHTP Q14 parser success
+
+PASS 02 actual parser quaternion has quality=3
+
+PASS 03 actual parser roll=12deg
+
+PASS 04 actual parser pitch=-7deg
+
+PASS 05 actual parser yaw=30deg
+
+PASS 06 fixture contract init
+
+PASS 07 actual parser+timepair+frame gate pass
+
+PASS 08 actual parsed BNO roll passes frame
+
+PASS 09 actual parsed BNO pitch passes frame
+
+PASS 10 actual parsed raw gyro x maps to p
+
+PASS 11 still no controller or motor authorization
+
+PASS 12 accepted counter visible
+
+PASS 13 parser yaw 90 report
+
+PASS 14 Z90 fixture contract init
+
+PASS 15 raw Q14 q_z90+mount_z90 yields body identity
+
+PASS 16 Z90 BNO q->body roll near zero
+
+PASS 17 Z90 BNO q->body pitch near zero
+
+PASS 18 Z90 BNO q->body yaw near zero
+
+PASS 19 Z90 gyro rate p=-sensor_y
+
+PASS 20 Z90 gyro rate q=sensor_x
+
+PASS 21 no real hardware sync certification
+
+PASS 22 low-quality Q14 still parses
+
+PASS 23 low-quality Q14 cannot yield accepted timepair
+
+PASS 24 invalid pair blocks final frame
+
+PASS 25 blocked frame completely clears output
+
+=== REAL SH2 TO RP FRAME: 25/25 PASS ===
+
+
+BUILD production_monitor: 0
+
+RUN production_monitor: 0
+PASS 001 uninitialized monitor getter fails
+
+PASS 002 uninitialized monitor status cleared
+
+PASS 003 NULL getter fails
+
+PASS 004 service before Init skips source access
+
+PASS 005 initialized getter succeeds
+
+PASS 006 default frame remains locked
+
+PASS 007 initial motor and controller off
+
+PASS 008 initial status counter zero
+
+PASS 009 all status sources queried
+
+PASS 010 monitor getter succeeds after service
+
+PASS 011 nominal statuses observed
+
+PASS 012 BNO valid does not approve frame
+
+PASS 013 frame result remains unverified
+
+PASS 014 no hazard on benign state
+
+PASS 015 service counter advances once
+
+PASS 016 missing status recorded
+
+PASS 017 missing source never allows controller
+
+PASS 018 unexpected ICM enable causes hazard
+
+PASS 019 hazard not accepted as ready
+
+PASS 020 hazard count nonzero
+
+PASS 021 hazard remains latched
+
+PASS 022 no extra hazard event after ICM off
+
+PASS 023 deliberate re-init clears hazard
+
+PASS 024 upstream fake controller ready detected
+
+PASS 025 unexpected virtual Shadow detected
+
+PASS 026 unexpected 100Hz controller ready detected
+
+PASS 027 unexpected motor flag detected
+
+PASS 028 absent shadow visible
+
+PASS 029 absent shadow still not controller-ready
+
+=== LKM RP FRAME MONITOR: 29/29 PASS ===
+
+
+GUARD: 1
+${SOURCE_ROOT}\04_firmware\workspace\bno086_bringup\LKM_RP_Frame_Contract_Offline_V1\Core\Src\lkm_rp_frame_contract.c:8:2: error: #error "Synthetic frame approval is forbidden in STM32F405 production firmware"
+    8 | #error "Synthetic frame approval is forbidden in STM32F405 production firmware"
+      |  ^~~~~
+
+INSTALLER 0
+.........................
+
+----------------------------------------------------------------------
+
+Ran 25 tests in 0.603s
+
+
+
+OK
+
+
+=== RP FRAME OFFLINE: 304/304 PASS ===

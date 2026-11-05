@@ -1,15 +1,11 @@
-# STM32 Firmware — 개발 예정
+# Firmware
 
-[펌웨어 구조](../docs/firmware-architecture.md) · [검증 계획](../docs/validation.md)
+실제 설치·검증 경로에서 선별한 최소 프로젝트는 [stm32/LKM_BNO086_Bringup](stm32/LKM_BNO086_Bringup/)입니다. 기존 C/H 로직과 생산 출력 잠금을 유지했습니다. `MW_target_hardware_resources.h`의 사용되지 않는 로컬 CubeMX 경로 macro만 공개용 이름으로 바꿨습니다.
 
-STM32F405RGT6 / C를 대상으로 보드 초기화, 센서 드라이버, 제어 코드와 진단 기능을 구현할 예정입니다. 현재 폴더에는 실행 가능한 프로젝트나 검증된 펌웨어를 포함하지 않습니다.
+- [구조와 구현 범위](../docs/firmware-architecture.md)
+- [빌드·재현](../docs/reproduction.md)
+- [의존성과 출처](../docs/source-and-license.md)
+- [생성 코드 대응](generated/README.md)
+- [사용자 드라이버 안내](drivers/README.md)
 
-| 폴더 | 앞으로 추가할 내용 |
-|---|---|
-| `stm32/` | 보드 HAL 초기화, application, build/debug 지침 |
-| `drivers/` | 장치별 드라이버, 통신·오류 처리 |
-| `generated/` | 모델에서 생성한 C 소스 및 모델/도구 버전·생성 조건 |
-
-공용 예시 코드나 기존 공개 강의 펌웨어를 이번 작업에서 복사하지 않았습니다. 외부 HAL/driver 코드를 포함할 때는 출처·버전·라이선스와 저작권 표시를 확인합니다. 생성 코드도 모델과 생성 도구의 조건을 기록한 뒤 추가합니다.
-
-보드별 핀맵·SPI clock·PWM 채널과 BNO086 호환성을 다시 확인하며, 다른 하드웨어의 성공 로그를 본 보드의 PASS로 사용하지 않습니다. build/run 절차는 실제로 재현한 이후 작성합니다.
+HAL/CMSIS는 FW_F4 V1.28.3 설치본을 별도 공급합니다. `.ioc`를 이용한 재생성은 **작업 사본에서만** 수행하고 생성된 Core를 검토 없이 덮어쓰지 않습니다. 현재 저장소는 실행 가능한 전체 비행제어 제품이 아니며 실제 MCU/센서/ESC 검증은 아직 없습니다.

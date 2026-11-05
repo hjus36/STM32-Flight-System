@@ -1,0 +1,485 @@
+COMPILE guard_fixture 0
+
+RUN guard_fixture 0
+PASS 001: null init context denied
+
+PASS 002: null Tick context denied
+
+PASS 003: null Tick output denied
+
+PASS 004: uninitialized context denied
+
+PASS 005: config 2N model max
+
+PASS 006: config 8N model collective
+
+PASS 007: NaN config blocked
+
+PASS 008: motor model bound >2N blocked
+
+PASS 009: collective model bound >8N blocked
+
+PASS 010: receiver age cannot be zero
+
+PASS 011: nonfinite torque limit rejected
+
+PASS 012: fixture context init
+
+PASS 013: no virtual output on init
+
+PASS 014: arm switch high at boot rejected
+
+PASS 015: repeated high cannot arm
+
+PASS 016: new arm switch low accepted
+
+PASS 017: low-to-high edge arms VIRTUAL only
+
+PASS 018: arm event emits zero thrust
+
+PASS 019: fresh model 4x1N accepted
+
+PASS 020: correct virtual thrust copied
+
+PASS 021: virtual accepted never ESC grant
+
+PASS 022: virtual frame count 1
+
+PASS 023: duplicate model seq failsafe
+
+PASS 024: failsafe state latches
+
+PASS 025: fault never automatically recovers
+
+PASS 026: reset requires arm switch LOW
+
+PASS 027: failsafe reset rejects reversed logical time
+
+PASS 028: explicit reset with switch LOW
+
+PASS 029: reset itself never arms
+
+PASS 030: reset requires new LOW observation
+
+PASS 031: fresh LOW after reset
+
+PASS 032: fresh HIGH edge after reset
+
+PASS 033: new virtual run after explicit reset
+
+PASS 034: manual disarm zeroes output
+
+PASS 035: manual disarm does not latch failsafe
+
+PASS 036: disarmed tick holds zero
+
+PASS 037: emergency stop latches zero
+
+PASS 038: receiver signal loss latches zero
+
+PASS 039: unexpected high throttle latches zero
+
+PASS 040: battery undervoltage mock latches zero
+
+PASS 041: sensor invalid latches zero
+
+PASS 042: axis unverified latches zero
+
+PASS 043: gyro not calibrated latches zero
+
+PASS 044: scheduler overrun mock latches zero
+
+PASS 045: PID input invalid latches zero
+
+PASS 046: invalid command latches zero
+
+PASS 047: NaN collective blocked
+
+PASS 048: infinite torque blocked
+
+PASS 049: unreviewed model torque range blocked
+
+PASS 050: negative model collective blocked
+
+PASS 051: NaN virtual motor thrust blocked
+
+PASS 052: infinite motor thrust blocked
+
+PASS 053: negative thrust blocked
+
+PASS 054: motor model >2N blocked
+
+PASS 055: collective sum mismatch blocked
+
+PASS 056: skipped command sequence blocked
+
+PASS 057: stale model timestamp blocked
+
+PASS 058: future model timestamp blocked
+
+PASS 059: stale receiver heartbeat blocked
+
+PASS 060: stale IMU heartbeat blocked
+
+PASS 061: stale battery heartbeat blocked
+
+PASS 062: stale controller heartbeat blocked
+
+PASS 063: stale scheduler heartbeat blocked
+
+PASS 064: future IMU time blocked
+
+PASS 065: logical clock reversal blocked
+
+PASS 066: new sequential virtual command allowed
+
+PASS 067: second virtual frame count
+
+PASS 068: sequence gap to max is rejected
+
+PASS 069: first sequence max accepted
+
+PASS 070: command sequence wrap max to zero accepted
+
+PASS 071: disarmed missing RX never arms
+
+PASS 072: disarmed no fail latch on missing RX
+
+PASS 073: recovered RX with HIGH switch cannot arm
+
+PASS 074: unknown error text safe
+
+PASS 075: normal result text mapping
+
+PASS 076: ESC enable is never permitted
+
+=== ACTUATOR GUARD HOST FIXTURE: 76/76 PASS ===
+
+
+COMPILE generated_mixer 0
+
+RUN generated_mixer 0
+PASS 001: exact generated Mixer produces a valid model-only N vector
+
+PASS 002: default Quad-X model each = 1N
+
+PASS 003: four thrusts are not PWM
+
+PASS 004: real model mixer collective[0] torque[0] bounded
+
+PASS 005: real model mixer collective[0] torque[1] bounded
+
+PASS 006: real model mixer collective[0] torque[2] bounded
+
+PASS 007: real model mixer collective[0] torque[3] bounded
+
+PASS 008: real model mixer collective[0] torque[4] bounded
+
+PASS 009: real model mixer collective[1] torque[0] bounded
+
+PASS 010: real model mixer collective[1] torque[1] bounded
+
+PASS 011: real model mixer collective[1] torque[2] bounded
+
+PASS 012: real model mixer collective[1] torque[3] bounded
+
+PASS 013: real model mixer collective[1] torque[4] bounded
+
+PASS 014: real model mixer collective[2] torque[0] bounded
+
+PASS 015: real model mixer collective[2] torque[1] bounded
+
+PASS 016: real model mixer collective[2] torque[2] bounded
+
+PASS 017: real model mixer collective[2] torque[3] bounded
+
+PASS 018: real model mixer collective[2] torque[4] bounded
+
+PASS 019: real model mixer collective[3] torque[0] bounded
+
+PASS 020: real model mixer collective[3] torque[1] bounded
+
+PASS 021: real model mixer collective[3] torque[2] bounded
+
+PASS 022: real model mixer collective[3] torque[3] bounded
+
+PASS 023: real model mixer collective[3] torque[4] bounded
+
+PASS 024: real model mixer collective[4] torque[0] bounded
+
+PASS 025: real model mixer collective[4] torque[1] bounded
+
+PASS 026: real model mixer collective[4] torque[2] bounded
+
+PASS 027: real model mixer collective[4] torque[3] bounded
+
+PASS 028: real model mixer collective[4] torque[4] bounded
+
+PASS 029: real model mixer collective[5] torque[0] bounded
+
+PASS 030: real model mixer collective[5] torque[1] bounded
+
+PASS 031: real model mixer collective[5] torque[2] bounded
+
+PASS 032: real model mixer collective[5] torque[3] bounded
+
+PASS 033: real model mixer collective[5] torque[4] bounded
+
+PASS 034: real model mixer collective[6] torque[0] bounded
+
+PASS 035: real model mixer collective[6] torque[1] bounded
+
+PASS 036: real model mixer collective[6] torque[2] bounded
+
+PASS 037: real model mixer collective[6] torque[3] bounded
+
+PASS 038: real model mixer collective[6] torque[4] bounded
+
+PASS 039: real model mixer collective[7] torque[0] bounded
+
+PASS 040: real model mixer collective[7] torque[1] bounded
+
+PASS 041: real model mixer collective[7] torque[2] bounded
+
+PASS 042: real model mixer collective[7] torque[3] bounded
+
+PASS 043: real model mixer collective[7] torque[4] bounded
+
+PASS 044: unverified upstream Mixer input blocked
+
+PASS 045: NaN collective rejected before model
+
+PASS 046: Inf collective rejected before model
+
+PASS 047: negative collective rejected before model
+
+PASS 048: collective > model 8N rejected
+
+PASS 049: NaN roll torque rejected BEFORE generated Mixer can hide it
+
+PASS 050: inf pitch torque rejected before Mixer
+
+PASS 051: NaN yaw torque rejected before Mixer
+
+PASS 052: unreviewed model torque envelope blocked
+
+PASS 053: null input blocked and output scrubbed
+
+PASS 054: null output blocked
+
+PASS 055: null input/output blocked
+
+=== REAL GENERATED MIXER HOST FIXTURE: 55/55 PASS ===
+
+
+COMPILE generated_stack 0
+
+RUN generated_stack 0
+PASS 001: new application begins DISARMED
+
+PASS 002: prearm switch LOW
+
+PASS 003: arm switch rising edge VIRTUAL only
+
+PASS 004: no motor enabled on arm edge
+
+PASS 005: 1,000 virtual 10ms frames accepted
+
+PASS 006: 1,000-frame simulation stays ARM VIRTUAL
+
+PASS 007: 1,000-frame simulation never ESC output
+
+PASS 008: last model output in N only
+
+PASS 009: link loss immediately latches FAILSAFE
+
+PASS 010: FAILSAFE records one event
+
+PASS 011: valid data cannot automatically re-arm
+
+PASS 012: explicit Reset after link restored
+
+PASS 013: reset remains DISARMED
+
+PASS 014: reset first low observation
+
+PASS 015: new rising edge re-arms VIRTUAL
+
+PASS 016: post-reset new model seq accepted
+
+PASS 017: new synthetic run still no ESC
+
+PASS 018: tick before rollover LOW
+
+PASS 019: tick before rollover HIGH
+
+PASS 020: tick across uint32 rollover passes
+
+PASS 021: rollover never changes hard ESC gate
+
+PASS 022: missing axes rejects prearm health
+
+PASS 023: missing axes never yields arm evidence
+
+PASS 024: Model source remains synthetic
+
+PASS 025: no PWM conversion API used
+
+=== GENERATED MIXER + FAILSAFE STACK: 25/25 PASS ===
+
+
+COMPILE production_locked 0
+
+RUN production_locked 0
+PASS 001: fixture macro absent in production
+
+PASS 002: production request fixture denied
+
+PASS 003: production initialized but LOCKED
+
+PASS 004: production Tick 0 cannot arm
+
+PASS 005: production Tick 1 cannot arm
+
+PASS 006: production Tick 2 cannot arm
+
+PASS 007: production Tick 3 cannot arm
+
+PASS 008: production Tick 4 cannot arm
+
+PASS 009: production Tick 5 cannot arm
+
+PASS 010: production Tick 6 cannot arm
+
+PASS 011: production Tick 7 cannot arm
+
+PASS 012: production Tick 8 cannot arm
+
+PASS 013: production Tick 9 cannot arm
+
+PASS 014: production reset forbidden
+
+PASS 015: production controller readiness always false
+
+PASS 016: production ESC enable always false
+
+PASS 017: production virtual frames zero
+
+PASS 018: production failsafe counters not armed
+
+PASS 019: locked even with request_fixture=false
+
+PASS 020: cannot unlock by reinitialization
+
+PASS 021: production Mixer attempt 0 blocked
+
+PASS 022: production Mixer attempt 1 blocked
+
+PASS 023: production Mixer attempt 2 blocked
+
+PASS 024: production Mixer attempt 3 blocked
+
+PASS 025: production mixer null argument safe
+
+PASS 026: production model max labels remain in N
+
+PASS 027: production bad config still rejected
+
+PASS 028: bad config still cannot arm
+
+=== ACTUATOR PRODUCTION HARD LOCK: 28/28 PASS ===
+
+
+COMPILE production_monitor 0
+
+RUN production_monitor 0
+PASS 001: status unavailable before monitor Init
+
+PASS 002: null status rejected
+
+PASS 003: monitor initializes
+
+PASS 004: production guard LOCKED
+
+PASS 005: production guard hard lock result
+
+PASS 006: monitor cannot grant ESC
+
+PASS 007: monitor cannot grant controller
+
+PASS 008: monitor initially safe locked
+
+PASS 009: all upstream status available
+
+PASS 010: service counter one
+
+PASS 011: no hazards under locked status
+
+PASS 012: services repeated, no ESC actions
+
+PASS 013: missing BNO/ICM status observed
+
+PASS 014: missing status counted
+
+PASS 015: missing status cannot arm
+
+PASS 016: source recovers, remains locked
+
+PASS 017: missing schedule status counted
+
+PASS 018: missing Shadow status counted
+
+PASS 019: missing frame status counted
+
+PASS 020: unexpected ICM enable sets upstream hazard
+
+PASS 021: unexpected ICM hazard counted once
+
+PASS 022: hazard keeps production locked flag false
+
+PASS 023: hazard still no controller/ESC permission
+
+PASS 024: upstream hazard latches on recovery
+
+PASS 025: upstream controller feedback ready anomaly latched
+
+PASS 026: scheduler controller ready anomaly latched
+
+PASS 027: shadow controller ready anomaly latched
+
+PASS 028: shadow ESC ready anomaly latched
+
+PASS 029: shadow virtual fixture anomaly latched
+
+PASS 030: frame controller ready anomaly latched
+
+PASS 031: frame ESC ready anomaly latched
+
+PASS 032: frame hazard propagation latched
+
+PASS 033: manual Init resets monitor hazard ONLY
+
+PASS 034: no motor protocol configuration appears in monitor
+
+=== ACTUATOR PRODUCTION MONITOR: 34/34 PASS ===
+
+
+MCU_FIXTURE_COMPILE_RESULT 1
+In file included from ${SOURCE_ROOT}\04_firmware\workspace\bno086_bringup\LKM_FC_Actuator_Safety_Offline_V1\Core\Src\lkm_fc_actuator_guard.c:1:
+${SOURCE_ROOT}\04_firmware\workspace\bno086_bringup\LKM_FC_Actuator_Safety_Offline_V1\Core\Inc/lkm_fc_actuator_guard.h:15:4: error: #error "Actuator HOST_FIXTURE is forbidden on MCU / STM32 production builds"
+   15 | #  error "Actuator HOST_FIXTURE is forbidden on MCU / STM32 production builds"
+      |    ^~~~~
+
+INSTALL 0
+............................
+
+----------------------------------------------------------------------
+
+Ran 28 tests in 0.736s
+
+
+
+OK
+
+
+=== ACTUATOR SAFETY OFFLINE: 247/247 PASS ===

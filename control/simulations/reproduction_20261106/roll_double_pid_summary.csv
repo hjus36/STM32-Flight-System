@@ -1,0 +1,2 @@
+StepTime_s,TargetAngle_deg,AngleAtStop_deg,FinalAngleError_deg,RiseTime10to90_s,SettlingTime2pct_s,Overshoot_pct,PeakAbsRate_rad_s,PeakSignedRate_rad_s,PeakAbsTorque_Nm,PeakSignedTorque_Nm,IAE_deg_s,IntegralTorqueSquared_Nm2_s,MedianSampleTime_s
+1,5,5.00000000154739,1.54739392196159e-09,0.95,1.55,0.102426096770335,0.132340992011557,0.132340992011557,0.00872664625997165,0.00872664625997165,2.48510065921892,3.95501597717834e-06,0.00999999999999979

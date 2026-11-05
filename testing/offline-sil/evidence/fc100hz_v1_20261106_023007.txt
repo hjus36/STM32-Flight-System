@@ -1,0 +1,188 @@
+PASS 01: init null
+PASS 02: bad lateness zero
+PASS 03: bad lateness 10
+PASS 04: bad work zero
+PASS 05: bad work 10
+PASS 06: normal init
+PASS 07: first deadline 110
+PASS 08: controller disabled
+PASS 09: poll before due
+PASS 10: poll t109 wait
+PASS 11: poll at 110 ready
+PASS 12: inflight set
+PASS 13: deadline advanced to 120
+PASS 14: one dispatch
+PASS 15: finish within 1ms
+PASS 16: inflight cleared
+PASS 17: work max1
+PASS 18: t119 wait
+PASS 19: t120 ready
+PASS 20: finish immediate
+PASS 21: 2 dispatches
+PASS 22: on-time no missed
+PASS 23: allow 2ms lateness
+PASS 24: lateness max 2
+PASS 25: finish after late+3 within budget
+PASS 26: t140 ready
+PASS 27: finish t145 max budget
+PASS 28: max work5
+PASS 29: t150 ready
+PASS 30: overrun 6ms latched
+PASS 31: overrun count
+PASS 32: overrun fault latch
+PASS 33: no more tick after overrun
+PASS 34: reinit clears fault
+PASS 35: 3ms late fails closed
+PASS 36: late counted
+PASS 37: miss current deadline
+PASS 38: late fault latch
+PASS 39: reinit again
+PASS 40: many missed ticks drop
+PASS 41: five slots missed total
+PASS 42: one late event
+PASS 43: no catchup dispatch
+PASS 44: reinit third
+PASS 45: double poll first ready
+PASS 46: second poll without finish fault
+PASS 47: double poll fault latched
+PASS 48: reinit fourth
+PASS 49: finish without start invalid
+PASS 50: reinit fifth
+PASS 51: backward time fault
+PASS 52: backward fault latch
+PASS 53: wrap init
+PASS 54: wrap next due t4
+PASS 55: wrap wait past max
+PASS 56: wrap due
+PASS 57: wrap finish
+PASS 58: wrap next tick ready
+PASS 59: wrap second finish
+PASS 60: no wrap false miss
+PASS 61: too large clock jump rejected
+PASS 62: 1000-cycle mock init
+PASS 63: 1000 mock 100Hz slots dispatch
+PASS 64: 1000 slots: no missed, no overruns
+PASS 65: 1000 slots advance to 10010
+PASS 66: no real MCU timer claimed
+PASS 67: NULL scheduler poll
+PASS 68: NULL scheduler finish
+PASS 69: result status text
+PASS 70: result unknown safe
+PASS 71: NULL buffer push
+PASS 72: NULL sample push
+PASS 73: uninit buffer blocks
+PASS 74: NULL take output
+PASS 75: NULL take context
+PASS 76: init buffer
+PASS 77: empty take no sample
+PASS 78: empty take zero output
+PASS 79: reject empty sources
+PASS 80: bad count increment
+PASS 81: accept BNO only
+PASS 82: one enqueued
+PASS 83: duplicate BNO rejected
+PASS 84: duplicate count
+PASS 85: BNO latest pop
+PASS 86: BNO numbers preserved
+PASS 87: absent gyro fields wiped
+PASS 88: never controller ready
+PASS 89: buffer drained
+PASS 90: accept gyro only
+PASS 91: gyro latest pop
+PASS 92: gyro values preserved
+PASS 93: absent BNO fields wiped
+PASS 94: gyro frame not body ready
+PASS 95: nonfinite gyro reject
+PASS 96: out of bound gyro reject
+PASS 97: valid gyro again
+PASS 98: duplicate gyro rejected
+PASS 99: gyro age20 inclusive
+PASS 100: queue fresh gyro
+PASS 101: gyro age21 stale
+PASS 102: stale pop zeros output
+PASS 103: stale count updated
+PASS 104: NaN BNO reject
+PASS 105: BNO roll reject
+PASS 106: BNO pitch reject
+PASS 107: BNO age50 inclusive
+PASS 108: take at boundary
+PASS 109: BNO age51 rejected
+PASS 110: future BNO rejected
+PASS 111: future gyro rejected
+PASS 112: both IMU mock fields accepted
+PASS 113: both IMU latest
+PASS 114: two-sensor still no PID
+PASS 115: timestamp real mock values
+PASS 116: reinitialize clears queue
+PASS 117: accept consecutive records
+PASS 118: accept consecutive records
+PASS 119: accept consecutive records
+PASS 120: accept consecutive records
+PASS 121: accept consecutive records
+PASS 122: accept consecutive records
+PASS 123: accept consecutive records
+PASS 124: accept consecutive records
+PASS 125: ring capacity eight
+PASS 126: full ring rejects ninth
+PASS 127: full counter
+PASS 128: full ring count unchanged
+PASS 129: latest only take
+PASS 130: latest seq eight
+PASS 131: older seven discarded
+PASS 132: queue empty after take
+PASS 133: rejected ninth can be retried
+PASS 134: retry accepted latest
+PASS 135: wrap seed accepted
+PASS 136: wrap counter accepted
+PASS 137: wrap latest read
+PASS 138: wrap still no PID
+PASS 139: sample status text
+=== 100HZ SCHEDULER + BUFFER: 139/139 PASS ===
+
+
+PASS 01: before init status unavailable
+PASS 02: before init no feedback
+PASS 03: uninitialized service no BNO getter
+PASS 04: after init status
+PASS 05: configured 10ms
+PASS 06: bridge controller always disabled
+PASS 07: ring initialized
+PASS 08: not in flight
+PASS 09: no UART or motor symbol dependency
+PASS 10: t9 no sensor read
+PASS 11: t10 one timed read
+PASS 12: t10 unverified sensor is missing
+PASS 13: t10 no data fabricated
+PASS 14: t10 scheduler ready completed
+PASS 15: t20 new BNO frame copied
+PASS 16: t20 ring drained
+PASS 17: t20 no PID approval
+PASS 18: t30 duplicate frame skipped
+PASS 19: t30 one snapshot only
+PASS 20: t40 second new BNO
+PASS 21: t40 no SPI1/gyro fields
+PASS 22: t40 two drained
+PASS 23: future mock BNO timestamp rejected
+PASS 24: future count not recorded
+PASS 25: rejected seq can retry
+PASS 26: no Ring false READY
+PASS 27: missing BNO tick counted
+PASS 28: missing BNO no extra frame
+PASS 29: 3ms late faults
+PASS 30: late event counted
+PASS 31: after latch no sensor read
+PASS 32: bridge faults counted
+PASS 33: after latch no PID
+PASS 34: bridge handles wrap
+PASS 35: wrap remains failclosed
+PASS 36: reinit resets status
+PASS 37: null status rejected
+=== 100HZ BRIDGE MOCK: 37/37 PASS ===
+
+
+..................
+----------------------------------------------------------------------
+Ran 18 tests in 0.338s
+
+OK
+

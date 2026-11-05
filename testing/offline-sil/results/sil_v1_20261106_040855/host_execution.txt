@@ -1,0 +1,36 @@
+CASE baseline                    | virtual=1000  | fault_events=0 | first_fault=0 | cause=OK
+
+CASE receiver_loss               | virtual=118   | fault_events=1 | first_fault=1210 | cause=RECEIVER
+
+CASE receiver_recovery           | virtual=205   | fault_events=1 | first_fault=1210 | cause=RECEIVER
+
+CASE battery_low                 | virtual=118   | fault_events=1 | first_fault=1210 | cause=BATTERY
+
+CASE imu_stale                   | virtual=118   | fault_events=1 | first_fault=1210 | cause=SENSOR_OR_AXES
+
+CASE timestamp_skew              | virtual=118   | fault_events=1 | first_fault=1210 | cause=SENSOR_OR_AXES
+
+CASE duplicate_sample            | virtual=118   | fault_events=1 | first_fault=1210 | cause=SENSOR_OR_AXES
+
+CASE scheduler_overrun           | virtual=118   | fault_events=1 | first_fault=1210 | cause=SCHEDULER
+
+CASE axis_unverified             | virtual=118   | fault_events=1 | first_fault=1210 | cause=SENSOR_OR_AXES
+
+CASE low_bno_accuracy            | virtual=118   | fault_events=1 | first_fault=1210 | cause=SENSOR_OR_AXES
+
+CASE nan_target                  | virtual=118   | fault_events=1 | first_fault=1210 | cause=CONTROLLER
+
+CASE nan_mixer                   | virtual=118   | fault_events=1 | first_fault=1210 | cause=COMMAND
+
+CASE emergency_stop              | virtual=118   | fault_events=1 | first_fault=1210 | cause=ESTOP
+
+CASE receiver_heartbeat_stale    | virtual=118   | fault_events=1 | first_fault=1210 | cause=HEARTBEAT
+
+CASE battery_heartbeat_stale     | virtual=118   | fault_events=1 | first_fault=1210 | cause=HEARTBEAT
+
+=== INTEGRATED HOST SIL: 26860/26860 CHECKS PASS; 15 SCENARIOS ===
+
+CSV: ${SOURCE_ROOT}\04_firmware\workspace\bno086_bringup\evidence\integrated_sil_validation\sil_v1_20261106_040855\trace_all_scenarios.csv
+
+HOST FIXTURE ONLY: synthetic IMU packet bytes, mock RC/battery, invented linear plant; NO physical axes, MCU, ESC or flight.
+

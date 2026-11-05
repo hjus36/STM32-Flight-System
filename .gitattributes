@@ -1,0 +1,7 @@
+# Preserve byte-exact sources and evidence used by SHA-256 regression gates.
+# Do not let per-machine core.autocrlf settings rewrite published artifacts.
+* -text
+
+*.slx binary
+*.pdf binary
+*.png binary

@@ -1,0 +1,106 @@
+host_time_pair_46
+PASS 01: NULL init context rejected
+PASS 02: NULL init config rejected
+PASS 03: zero BNO TTL rejected
+PASS 04: zero gyro TTL rejected
+PASS 05: zero skew rejected
+PASS 06: invalid BNO quality threshold rejected
+PASS 07: unsupported BNO report rejected
+PASS 08: nonfinite gyro limit rejected
+PASS 09: negative gyro limit rejected
+PASS 10: normal init passes
+PASS 11: NULL output rejected
+PASS 12: NULL state rejected
+PASS 13: uninitialized state blocked
+PASS 14: NULL BNO rejected
+PASS 15: NULL gyro rejected
+PASS 16: BNO zero counter no sample
+PASS 17: uncalibrated/invalid gyro rejected
+PASS 18: gyro zero seq no sample
+PASS 19: wrong BNO report rejected
+PASS 20: low-quality BNO rejected
+PASS 21: illegal quality status rejected
+PASS 22: NaN BNO rejected
+PASS 23: invalid pitch rejected
+PASS 24: infinite gyro rejected
+PASS 25: sensor rate bound enforced
+PASS 26: BNO stale rejected
+PASS 27: gyro stale rejected
+PASS 28: receipt skew >15ms rejected
+PASS 29: BNO future timestamp rejected
+PASS 30: gyro future timestamp rejected
+PASS 31: first timestamp-near pair observed
+PASS 32: host receipt difference has correct sign
+PASS 33: poses and sensor rates copied unchanged
+PASS 34: observation NEVER authorizes controller
+PASS 35: same pair rejected, output cleared
+PASS 36: fresh BNO with duplicate gyro rejected
+PASS 37: fresh gyro with duplicate BNO rejected
+PASS 38: both new records accepted
+PASS 39: reinit for skew boundary
+PASS 40: 15ms inclusive boundary accepted
+PASS 41: new config resets pair history
+PASS 42: HAL tick wrap across sensor reports accepted
+PASS 43: tick wrap timestamp skew correct
+PASS 44: positive signed receipt skew
+PASS 45: result text known
+PASS 46: unknown status text safe
+=== HOST RECEIPT TIME PAIR: 46/46 PASS ===
+OBSERVATION ONLY: physical axes, hardware capture synchronization, PID and motors remain UNVERIFIED/OFF
+
+real_bno_timed_diag_44
+PASS 01: actual Product ID probe succeeded
+PASS 02: probe transitions to NEED_SET, not automatically transmitting
+PASS 03: SHTP startup+product read was completed
+PASS 04: app never initiates feature operation from Init
+PASS 05: first Set Feature uses inherited control seq1
+PASS 06: Set request has requested 100 Hz interval
+PASS 07: CS and WAKE released after duplex Set
+PASS 08: Get Feature uses seq2
+PASS 09: Set/Get TX is not acceptance proof
+PASS 10: idle wait for 0xFC does not clock SPI
+PASS 11: verified 0xFC transitions to STREAMING
+PASS 12: no pose until a real sensor report
+PASS 13: Quaternion parsed through existing SHTP Link
+PASS 14: received report tracks expected ID and accuracy
+PASS 15: idle stream poll does not initiate extra SPI
+PASS 16: stale pose fails closed and preserves output
+PASS 17: low quality not sent to caller
+PASS 18: good quality sample restores output
+PASS 19: sensor sequence gap latches application fault
+PASS 20: fault never leaks previously cached attitude
+PASS 21: latched fault causes no further SPI operations
+PASS 22: Get Feature reply timeout is bounded
+PASS 23: pre-CS timeout retains NEED_SET without fault
+PASS 24: backoff prevents immediate repeated SET transaction
+PASS 25: third pre-CS timeout enters fail-closed fault
+PASS 26: ambiguous SPI write error faults with CS released
+PASS 27: null attitude pointer safely rejected
+PASS 28: Product ID and features use duplex SPI exclusively
+PASS 29: all GPIO writes restricted to BNO086 CS/WAKE/RESET
+PASS 30: timed getter before sensor data fails closed
+PASS 31: timed getter NULL rejected
+PASS 32: timed getter takes actual accepted SHTP receipt time
+PASS 33: timestamp getter does not trigger SPI/UART writes
+PASS 34: age computed on each read without new packet
+PASS 35: time-pair observation config accepted
+PASS 36: real BNO timestamp + synthetic gyro receipt pair
+PASS 37: duplicate BNO and gyro never authorize second pair
+PASS 38: 50ms BNO gate boundary accepts sample
+PASS 39: 51ms sample fails and zeros timed output
+PASS 40: unreliable SH2 accuracy cannot leak timestamped pose
+PASS 41: new good report refreshes receipt and counter
+PASS 42: SHTP sequence gap faults and timed output is invalid
+PASS 43: HAL_GetTick rollover retains true receipt age
+PASS 44: timed getter never calls unidirectional probe
+
+=== BNO086 TIMED DIAG INTEGRATION: 44/44 GROUPS PASS ===
+HOST MOCK ONLY; NO BOARD/REAL SENSOR/MCU EXECUTION/ESC OR MOTOR OUTPUT
+
+installer safety 12/12 PASS
+............
+----------------------------------------------------------------------
+Ran 12 tests in 0.135s
+
+OK
+

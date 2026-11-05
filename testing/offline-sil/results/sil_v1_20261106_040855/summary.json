@@ -1,0 +1,130 @@
+{
+  "scope": "HOST_SYNTHETIC_SIL_NOT_REAL_HARDWARE",
+  "C_checks_passed": 26860,
+  "scenario_count": 15,
+  "production_lock": "PASS",
+  "macro_compile_rejection": "PASS",
+  "source_hashes_sha256": {
+    "lkm_bno086_attitude.c": "6097a7e874db361497a2e0dffdcc6c9abd4c710d7883f4894605ba11241fbd24",
+    "lkm_imu_time_pair.c": "7201f8ce9ddbcf2876578d1d0ba7b79c64687db76a52fe35c213784bf547d360",
+    "lkm_rp_feedback_gate.c": "35606cbe63fb34469fcb46476a01293c642cdbdef97eb766f1916c650a65d088",
+    "lkm_rp_frame_contract.c": "278c491f06108af6180244dd9cdcc6dc34700e8d219315bcc486a30a83fa2ec1",
+    "lkm_fc100hz_core.c": "cf74bb3fa18a91c5b4a9ca5e9683cdc788330b50afcf52b105348d2084ef3de4",
+    "lkm_aw_core_preview.c": "7d00c47858ef1525dbe02ced8b8b0a432e5aa51b05d8f5d255646a9d216651b1",
+    "LKM_AW_Core_F405.c": "a95d2b41df69cf060f4f9baf37dd8012254d1ea881f245158d05bd585d4194a0",
+    "LKM_AW_Ctrl_F405.c": "bf641bd5bba21fecd27aaf7776429c80549be03d1ab50bab2b2238aa0ed64740",
+    "LKM_AW_Mixer_F405.c": "1e1b0753f509b6caf68fa34f4f2f423bd46657210ab85e679e02e1ba5454838c",
+    "const_params.c": "b5a511d743e4568cfe2c8d6894c06511dc8bfc58856531c11fee7404351ccc82",
+    "rt_nonfinite.c": "71c2eba5c50a9db7814f2968c16d16953721df9acd74aa0577f413054c092062",
+    "lkm_fc_actuator_guard.c": "0eedfc66f40ba92c32a94e309a861c258ddb1182e0e5f2f8f5381ccee533c27a",
+    "lkm_fc_virtual_mixer.c": "ae43a4605d0521c7f77664b3163b45dd1f550f200f81fead43643c997dc72c0a"
+  },
+  "trace_sha256": "e326a9e2616627b3c9c04381fd790ff7476d128b04b94dc9c59434451621a432",
+  "scenarios": {
+    "baseline": {
+      "samples": 1002,
+      "virtual_frames": 1000,
+      "first_failsafe_ms": null,
+      "first_failsafe_reason": null,
+      "final_state": 2
+    },
+    "receiver_loss": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "RECEIVER",
+      "final_state": 3
+    },
+    "receiver_recovery": {
+      "samples": 310,
+      "virtual_frames": 205,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "RECEIVER",
+      "final_state": 2
+    },
+    "battery_low": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "BATTERY",
+      "final_state": 3
+    },
+    "imu_stale": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "SENSOR_OR_AXES",
+      "final_state": 3
+    },
+    "timestamp_skew": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "SENSOR_OR_AXES",
+      "final_state": 3
+    },
+    "duplicate_sample": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "SENSOR_OR_AXES",
+      "final_state": 3
+    },
+    "scheduler_overrun": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "SCHEDULER",
+      "final_state": 3
+    },
+    "axis_unverified": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "SENSOR_OR_AXES",
+      "final_state": 3
+    },
+    "low_bno_accuracy": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "SENSOR_OR_AXES",
+      "final_state": 3
+    },
+    "nan_target": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "CONTROLLER",
+      "final_state": 3
+    },
+    "nan_mixer": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "COMMAND",
+      "final_state": 3
+    },
+    "emergency_stop": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "ESTOP",
+      "final_state": 3
+    },
+    "receiver_heartbeat_stale": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "HEARTBEAT",
+      "final_state": 3
+    },
+    "battery_heartbeat_stale": {
+      "samples": 320,
+      "virtual_frames": 118,
+      "first_failsafe_ms": 1210,
+      "first_failsafe_reason": "HEARTBEAT",
+      "final_state": 3
+    }
+  }
+}

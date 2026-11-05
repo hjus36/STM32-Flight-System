@@ -1,0 +1,305 @@
+preview_47
+COMPILER_EXIT 0
+
+RUN_EXIT 0
+PASS 01: init causes no step
+
+PASS 02: genuine core output initialized to zero
+
+PASS 03: first synthetic control tick succeeds
+
+PASS 04: model step count advanced exactly once
+
+PASS 05: actual roll radians mapped
+
+PASS 06: actual pitch radians mapped
+
+PASS 07: body p rad/s maps Actual_Roll_Rate
+
+PASS 08: body q rad/s maps Actual_Pitch_Rate
+
+PASS 09: both angle targets copied
+
+PASS 10: synthetic collective N mapped
+
+PASS 11: motor previews computed by real generated model
+
+PASS 12: torque diagnostics mapped
+
+PASS 13: rate target diagnostics mapped
+
+PASS 14: host synthetic thrust previews finite
+
+PASS 15: duplicate early tick skipped
+
+PASS 16: correct 10ms next tick accepted
+
+PASS 17: same report blocked even at scheduled tick
+
+PASS 18: reject scrubs global model ports
+
+PASS 19: new report recovers with controller reset
+
+PASS 20: missed 10ms interval blocks output
+
+PASS 21: after missed interval reinit allows clean preview
+
+PASS 22: unverified axes fail closed
+
+PASS 23: no verified gyro gate feedback blocks
+
+PASS 24: NaN sensor angle blocks
+
+PASS 25: inconsistent deg/rad sensor interface blocked
+
+PASS 26: infinite gyro blocks
+
+PASS 27: pitch outside physical bounds blocks
+
+PASS 28: unverified target blocks
+
+PASS 29: target exceeds test limit blocked
+
+PASS 30: NaN target rejected
+
+PASS 31: negative preview collective rejected
+
+PASS 32: collective above synthetic test limit blocked
+
+PASS 33: zero preview collective allowed
+
+PASS 34: NULL output pointer blocked
+
+PASS 35: NULL context guarded
+
+PASS 36: NULL command guarded
+
+PASS 37: NULL feedback guarded
+
+PASS 38: wrong model period rejected
+
+PASS 39: invalid preview limits rejected
+
+PASS 40: explicit invalidate zeros generated output
+
+PASS 41: uninitialized ctx blocked
+
+PASS 42: tick wrap first accepted
+
+PASS 43: 32bit tick wrap accepts 10ms
+
+PASS 44: unrealistic backward tick rejected
+
+PASS 45: result text mapped
+
+PASS 46: report sequence 255 accepted
+
+PASS 47: report sequence wrap 255 to 0 accepted
+
+=== REAL GENERATED AW CORE PREVIEW: 47/47 PASS ===
+
+
+sh2_gate_26
+COMPILER_EXIT 0
+
+RUN_EXIT 0
+INTEGRATION PASS 01: genuine BNO086 Q14 parser accepts Rotation Vector
+
+INTEGRATION PASS 02: quaternion roll & pitch in degrees
+
+INTEGRATION PASS 03: gate initializes with unverified physical axes
+
+INTEGRATION PASS 04: preview initialized but axes unverified
+
+INTEGRATION PASS 05: unverified axes block gate
+
+INTEGRATION PASS 06: unverified axes block generated step
+
+INTEGRATION PASS 07: synthetic frame config accepted
+
+INTEGRATION PASS 08: without ICM rate gate refuses
+
+INTEGRATION PASS 09: missing rate cannot advance genuine controller
+
+INTEGRATION PASS 10: synthetic p/q plus real SH2 angle pass gate
+
+INTEGRATION PASS 11: degrees converted into radians for real root inputs
+
+INTEGRATION PASS 12: body rates preserved rad/s without fabrication
+
+INTEGRATION PASS 13: real generated model invoked at t=1010
+
+INTEGRATION PASS 14: actual generated seven root inputs mapped
+
+INTEGRATION PASS 15: real mixer previews only, never ESC commands
+
+INTEGRATION PASS 16: repeat SH2 report rejected at feedback gate
+
+INTEGRATION PASS 17: repeat report cannot step generated controller
+
+INTEGRATION PASS 18: second fresh report parsed
+
+INTEGRATION PASS 19: second timestamp-matched synthetic p/q passes
+
+INTEGRATION PASS 20: generated model resets after input fault
+
+INTEGRATION PASS 21: low quality rejected
+
+INTEGRATION PASS 22: low quality never updates generated core
+
+INTEGRATION PASS 23: wrong report type rejected
+
+INTEGRATION PASS 24: unavailable real gyro keeps firmware blocked
+
+INTEGRATION PASS 25: no motor GPIO or UART is called by preview library
+
+INTEGRATION PASS 26: 1000 deterministic 100Hz synthetic ticks incl. sensor seq wrap
+
+=== SH2 + FEEDBACK GATE + GENERATED MODEL: 26/26 PASS ===
+
+
+shadow_fixture_49
+COMPILER_EXIT 0
+
+RUN_EXIT 0
+PASS 01: getter rejects null
+
+PASS 02: uninitialized getter rejected
+
+PASS 03: disabled mode init accepted
+
+PASS 04: disabled mode status readable
+
+PASS 05: disabled mode virtual off
+
+PASS 06: disabled mode controller off
+
+PASS 07: disabled mode never steps
+
+PASS 08: disabled mode no preview
+
+PASS 09: virtual fixture mode enables
+
+PASS 10: host fixture explicitly marked
+
+PASS 11: no step on init
+
+PASS 12: before 10ms deadline no model step
+
+PASS 13: early poll tracked
+
+PASS 14: exact first virtual 10ms step
+
+PASS 15: generated model produced valid preview
+
+PASS 16: fixture roll mapped
+
+PASS 17: fixture pitch mapped
+
+PASS 18: fixture body rate p
+
+PASS 19: fixture body rate q
+
+PASS 20: target angle mapped
+
+PASS 21: preview collective mapped
+
+PASS 22: generated U actual p
+
+PASS 23: generated U actual roll
+
+PASS 24: model motor outputs only numeric
+
+PASS 25: request torque trace
+
+PASS 26: controller and esc always disabled
+
+PASS 27: early service does not rerun model
+
+PASS 28: second scheduled step
+
+PASS 29: no rejected synthetic steps
+
+PASS 30: no scheduling faults
+
+PASS 31: shadow preserves no motor authorization
+
+PASS 32: fixture outputs remain valid
+
+PASS 33: fresh 1000-step fixture start
+
+PASS 34: 1000 real generated model steps
+
+PASS 35: 1000-step run retains finite output
+
+PASS 36: 1000-step no late faults
+
+PASS 37: 1000-step no rejected feedback
+
+PASS 38: 1000-step motor path always false
+
+PASS 39: tick-wrap fixture starts
+
+PASS 40: wrap produces 2 virtual steps
+
+PASS 41: wrap has no fault
+
+PASS 42: late-fault fixture starts
+
+PASS 43: skipped deadline disables future steps
+
+PASS 44: late fault scrubs output
+
+PASS 45: fault never gives arming permission
+
+PASS 46: latched stop no retry
+
+PASS 47: explicit init reopens test fixture
+
+PASS 48: reset model step starts fresh
+
+PASS 49: reset output valid
+
+=== AW SHADOW HOST FIXTURE: 49/49 PASS ===
+
+
+production_lock_10
+COMPILER_EXIT 0
+
+RUN_EXIT 0
+PASS 1: production forbids enabling virtual
+
+PASS 2: production status still safe
+
+PASS 3: production no virtual enabled
+
+PASS 4: production no generated model steps
+
+PASS 5: production output invalid
+
+PASS 6: production controller not ready
+
+PASS 7: production ESC not enabled
+
+PASS 8: production init false succeeds
+
+PASS 9: production off remains off
+
+PASS 10: production getter null protected
+
+=== AW SHADOW PRODUCTION LOCK: 10/10 PASS ===
+
+
+INSTALLER_EXIT 0
+...............
+
+----------------------------------------------------------------------
+
+Ran 15 tests in 0.399s
+
+
+
+OK
+
+
+=== AW F405 SHADOW OFFLINE: 147/147 PASS ===

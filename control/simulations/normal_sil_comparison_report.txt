@@ -1,0 +1,62 @@
+LKM_FC_V1 - Normal(single) vs SIL(single) verification
+Harness: Roll_Pitch_SIL_Harness
+Normal logged signals: 24
+SIL logged signals: 20
+Time tolerance: 1e-10 s
+Tolerance rule: absTol + 1e-05 * peak signal magnitude
+
+Actual_Roll_Angle [rad] (Roll_Pitch_SIL_Harness/Roll_Plant)
+  Samples: 1001
+  Max time difference: 0 s
+  Max abs difference: 0
+  RMS difference: 0
+  Final difference: 0
+  Tolerance: 1.87355837226e-06
+  PASS: 1
+
+Actual_Roll_Rate [rad/s] (Roll_Pitch_SIL_Harness/Roll_Plant)
+  Samples: 1001
+  Max time difference: 0 s
+  Max abs difference: 0
+  RMS difference: 0
+  Final difference: 0
+  Tolerance: 2.32340982556e-06
+  PASS: 1
+
+Roll_Control_Torque [N*m] (Roll_Pitch_SIL_Harness/Model)
+  Samples: 1001
+  Max time difference: 0 s
+  Max abs difference: 0
+  RMS difference: 0
+  Final difference: 0
+  Tolerance: 1.87266461924e-07
+  PASS: 1
+
+Actual_Pitch_Angle [rad] (Roll_Pitch_SIL_Harness/Pitch_Plant)
+  Samples: 1001
+  Max time difference: 0 s
+  Max abs difference: 0
+  RMS difference: 0
+  Final difference: 0
+  Tolerance: 1.52413504571e-06
+  PASS: 1
+
+Actual_Pitch_Rate [rad/s] (Roll_Pitch_SIL_Harness/Pitch_Plant)
+  Samples: 1001
+  Max time difference: 0 s
+  Max abs difference: 0
+  RMS difference: 0
+  Final difference: 0
+  Tolerance: 1.79404599965e-06
+  PASS: 1
+
+Pitch_Control_Torque [N*m] (Roll_Pitch_SIL_Harness/Model)
+  Samples: 1001
+  Max time difference: 0 s
+  Max abs difference: 0
+  RMS difference: 0
+  Final difference: 0
+  Tolerance: 1.52359881811e-07
+  PASS: 1
+
+OVERALL: PASS (6/6 signals)

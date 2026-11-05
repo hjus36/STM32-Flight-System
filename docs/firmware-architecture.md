@@ -1,41 +1,31 @@
-# Firmware Architecture — 구현 계획
+# Firmware Architecture — 구현과 검증 경계
 
-[프로젝트 개요](../README.md) · [코드 관리](../firmware/README.md)
+[프로젝트](../README.md) · [재현](reproduction.md) · [검증](validation.md)
 
-이 문서는 앞으로 구현할 구조를 정리한 초안입니다. LKM_FC_V1용 실행 바이너리, 검증된 센서 드라이버, 제어 루프 또는 비행 펌웨어는 현재 이 저장소에 없습니다.
+현재 기준은 `firmware/stm32/LKM_BNO086_Bringup/`의 실제 설치본입니다. 초기 패키지의 드라이버를 덮어 가져오지 않았습니다. 아래의 구현/ARM 컴파일은 MCU 실행 증거가 아닙니다.
 
-## STM32 펌웨어 구조
-
-| 영역 | 예정 책임 | 저장 위치 |
+| 계층 | 주요 파일 | 구현 / 현재 제한 |
 |---|---|---|
-| Board / HAL | clock, GPIO, SPI/I²C/UART, Timer, ADC, SWD bring-up | `firmware/stm32/` |
-| Drivers | 센서 초기화·readout, iBUS, EEPROM, 통신 오류 보고 | `firmware/drivers/` |
-| Control | 입력 정규화, 제어 상태, PID, Motor Mixing, 출력 제한 | 모델과 통합 결과에 따라 배치 |
-| Generated | 모델에서 생성한 C 코드와 생성 버전·조건 | `firmware/generated/` |
-| Application / Diagnostics | 초기화 순서, arming/failsafe, timestamp, 로깅 | `firmware/stm32/` |
+| 보드 초기화 | main.c, gpio.c, spi.c, usart.c, .ioc | STM32F405RGT6, HSE, SPI1/2, USART6; full FC 주변장치 초기화가 아님 |
+| BNO086 | lkm_bno086, link, shtp, stream, attitude, diag | SHTP 전송·startup 진단·일부 SH-2 rotation vector(0x05/0x08) 파서. 전체 CEVA SDK 아님 |
+| ICM-20602 | gyro, hal_spi, board_spi1, diag_core | raw gyro·상태·SPI HAL adapter, 실물 readback 미검증 |
+| Dual IMU | dual_imu_diag, imu_time_pair | receipt timestamp, freshness/skew/중복 검사, 실제 취득 동기화 아님 |
+| 100Hz | fc100hz_core, fc100hz_bridge | 10ms scheduling, ring buffer, 누락/overrun 감시; 실시간 jitter 미측정 |
+| Frame / Feedback | rp_frame_contract, frame_monitor, feedback_gate | 단위·축/부호·accuracy·freshness 조건, 실제 장착 축 승인 전 잠금 |
+| Generated core | LKM_AW_Core_F405, Ctrl, Mixer | single 10ms, rad/rad/s/N/N·m, 모델 결과만 취급 |
+| Shadow | aw_core_preview, aw_shadow | host에서 통합, 실제 firmware enable=false |
+| Guard / Mixer | fc_actuator_guard, virtual_mixer, actuator_monitor | 합성 arming/failsafe, production hard lock; ESC/PWM backend 없음 |
 
-Bare-metal/RTOS 선택, task 주기, DMA·interrupt 사용 방식은 아직 확정 구현이 아닙니다. 실제 센서 데이터 주기와 실행시간을 측정한 뒤 결정합니다.
+`main.c`는 진단·UART·Dual IMU·100Hz·Shadow·frame·actuator service를 순서대로 호출합니다. Dual IMU는 false로 초기화, AW Shadow는 false, frame/actuator는 잠금 상태입니다. 센서/제어 모듈이 포함됐다는 사실을 실제 센서 취득 또는 모터 구동 완료로 해석하지 않습니다.
 
-## HAL 및 센서 드라이버
+## 설정과 단위
 
-현재 설계의 핀맵·전압·SPI clock 조건에 맞춰 HAL 초기화를 작성하고, 장치별 ID 확인 및 단독 통신 시험부터 진행합니다. BNO086은 SH-2/SHTP, reset/wake startup, 기능별 report와 축 방향을 확인합니다. 기존 참고 펌웨어의 BNO080 드라이버가 그대로 검증됐다고 가정하지 않습니다.
+`.ioc`와 `spi.c`에서 SPI1 5.25MHz, SPI2 Mode3 2.625MHz를 확인했습니다. STM32CubeMX 6.16.0, FW_F4 V1.28.3 프로젝트입니다. 이는 코드 설정이며 실제 클록 파형 측정값이 아닙니다. UART 진단은 USART6입니다.
 
-ICM-20602와 LPS22HH는 센서 설정값, timestamp 및 raw data의 단위를 기록합니다. AT24C08C는 주소·WP·read/write와 전원 재인가 후 데이터 유지 시험이 필요합니다.
+모델 경계는 각도 rad, 각속도 rad/s, 토크 N·m, 추력 N입니다. BNO 파서의 Euler deg 표현과 모델 rad 변환은 feedback/frame 경계에서 관리합니다. ICM와 BNO의 host receipt timestamp를 비교하며 SH-2 sensor timestamp와 동일하다고 간주하지 않습니다.
 
-## MATLAB/Simulink 모델 기반 제어
+## 잠금과 남은 구현
 
-센서 좌표계·단위·sample time을 먼저 정의합니다. 제어 모델의 입력·출력 계약을 정한 후 자세/각속도 제어, 포화, anti-windup 및 안전 상태 처리를 모델에서 검토할 계획입니다. 아직 모델 파일이나 튜닝된 게인은 없습니다.
+`LKM_SIL_HOST_ONLY`, `LKM_RP_FRAME_HOST_FIXTURE`, `LKM_FC_ACTUATOR_HOST_FIXTURE`는 host 시험 전용입니다. 두 fixture macro를 STM32 정의와 함께 컴파일할 때 거부되는 검사를 유지합니다. 호스트에서 `virtual_valid=1`이어도 `esc_enabled=0`, `controller_ready=0`입니다.
 
-## C 코드 생성 및 통합 계획
-
-1. 모델과 MATLAB/Simulink 버전, solver, sample time, parameter set을 기록합니다.
-2. 시뮬레이션 입력과 기대 응답을 저장하고 재현성을 확인합니다.
-3. C 코드 생성 설정과 생성 산출물의 출처를 기록합니다.
-4. 센서 입력·PWM 출력과 연결하되 생성 파일과 수동 HAL/driver 코드를 구분합니다.
-5. 보드에서 실행시간, 지연, 단위 변환과 출력 제한을 측정합니다.
-
-## PID 및 Motor Mixing 구조
-
-RC 명령 → 목표 자세/각속도 → 제어 출력 → Motor Mixing → 범위 제한 → PWM 순서를 계획합니다. 모터 번호, CW/CCW, 기체 좌표계 및 센서 축은 실제 장착 방향과 일치시켜야 합니다. 6개 물리 PWM 채널이 있다는 사실과 6개 모터용 mixer 구현 완료는 별개입니다.
-
-센서 오류·RC timeout·arming 전 출력·비정상 reset에서 안전한 출력 상태를 검증한 뒤 모터 시험 범위를 확대합니다. 실제 시험 결과는 [Validation](validation.md)에 연결합니다.
+실제 RC/iBUS, VBAT ADC, GPS, LPS22HH, EEPROM, Telemetry, ESC 타이머 출력과 비행 제어 완성은 별도 후속 작업입니다. R10/R11 하드웨어 핀 설계를 펌웨어 완료로 승격하지 않습니다.

@@ -1,0 +1,409 @@
+[
+  {
+    "name": "LKM_AW_Core_F405",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "ert.tlc",
+    "workspace": {
+      "K_achieved_core": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ]
+    },
+    "references": [
+      "LKM_AW_Mixer_F405",
+      "LKM_AW_Ctrl_F405"
+    ]
+  },
+  {
+    "name": "LKM_AW_Ctrl_F405",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "ert.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "LKM_AW_Mixer_F405",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "ert.tlc",
+    "workspace": {
+      "D": 0.21,
+      "F_max_test": 2,
+      "K_mix": [
+        [
+          0.25,
+          -3.3671751,
+          -3.3671751,
+          0
+        ],
+        [
+          0.25,
+          -3.3671751,
+          3.3671751,
+          0
+        ],
+        [
+          0.25,
+          3.3671751,
+          -3.3671751,
+          0
+        ],
+        [
+          0.25,
+          3.3671751,
+          3.3671751,
+          0
+        ]
+      ],
+      "L": 0.105,
+      "d": 0.0742462128
+    },
+    "references": []
+  },
+  {
+    "name": "LKM_Roll_Pitch_AW_Core",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "ert.tlc",
+    "workspace": {
+      "K_achieved_core": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ]
+    },
+    "references": [
+      "Motor_Mixing_Bounded",
+      "Roll_Pitch_Controller_AW"
+    ]
+  },
+  {
+    "name": "LKM_Roll_Pitch_AW_Core_Harness",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": [
+      "LKM_Roll_Pitch_AW_Core"
+    ]
+  },
+  {
+    "name": "Motor_Mixing_Bounded",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {
+      "D": 0.21,
+      "F_max_test": 2,
+      "K_mix": [
+        [
+          0.25,
+          -3.3671751,
+          -3.3671751,
+          0
+        ],
+        [
+          0.25,
+          -3.3671751,
+          3.3671751,
+          0
+        ],
+        [
+          0.25,
+          3.3671751,
+          -3.3671751,
+          0
+        ],
+        [
+          0.25,
+          3.3671751,
+          3.3671751,
+          0
+        ]
+      ],
+      "L": 0.105,
+      "d": 0.0742462128
+    },
+    "references": []
+  },
+  {
+    "name": "Pitch_Double_PID",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Double_PID",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Pitch_Controller_AW",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "ert.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Pitch_Controller_SIL",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "ert.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Pitch_Double_PID",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Pitch_Mixer_AW_Integration",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {
+      "K_achieved": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ],
+      "d_arm": 0.0742462128
+    },
+    "references": [
+      "Motor_Mixing_Bounded",
+      "Roll_Pitch_Controller_AW"
+    ]
+  },
+  {
+    "name": "Roll_Pitch_Mixer_Disturbance_AW",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {
+      "K_achieved": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ],
+      "d_arm": 0.0742462128
+    },
+    "references": [
+      "Motor_Mixing_Bounded",
+      "Roll_Pitch_Controller_AW"
+    ]
+  },
+  {
+    "name": "Roll_Pitch_Mixer_Disturbance_Baseline",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {
+      "K_achieved": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ],
+      "d_arm": 0.0742462128
+    },
+    "references": [
+      "Motor_Mixing_Bounded",
+      "Roll_Pitch_Controller_SIL"
+    ]
+  },
+  {
+    "name": "Roll_Pitch_Mixer_Reversal_AW",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {
+      "K_achieved": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ],
+      "d_arm": 0.0742462128
+    },
+    "references": [
+      "Motor_Mixing_Bounded",
+      "Roll_Pitch_Controller_AW"
+    ]
+  },
+  {
+    "name": "Roll_Pitch_Mixer_Reversal_Baseline",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {
+      "K_achieved": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          -0.0742462128,
+          -0.0742462128,
+          0.0742462128,
+          0.0742462128
+        ],
+        [
+          -0.0742462128,
+          0.0742462128,
+          -0.0742462128,
+          0.0742462128
+        ]
+      ],
+      "d_arm": 0.0742462128
+    },
+    "references": [
+      "Motor_Mixing_Bounded",
+      "Roll_Pitch_Controller_SIL"
+    ]
+  },
+  {
+    "name": "Roll_Pitch_SIL_Harness",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": [
+      "Roll_Pitch_Controller_SIL"
+    ]
+  },
+  {
+    "name": "Roll_Single_P",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Single_PI",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Single_PID_2DOF",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  },
+  {
+    "name": "Roll_Single_PID_Full",
+    "fixed_step": "0.01",
+    "solver": "FixedStepDiscrete",
+    "target": "grt.tlc",
+    "workspace": {},
+    "references": []
+  }
+]

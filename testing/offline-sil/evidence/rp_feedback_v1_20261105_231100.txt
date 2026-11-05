@@ -1,0 +1,111 @@
+rp_gate_unit_40 COMPILE: 0
+
+rp_gate_unit_40 RUN: 0
+PASS 01: initialization NULL guarded
+
+PASS 02: invalid sign rejected, previous state invalidated
+
+PASS 03: zero attitude age forbidden
+
+PASS 04: zero gyro age forbidden
+
+PASS 05: unsupported report rejected in configuration
+
+PASS 06: bad quality threshold rejected
+
+PASS 07: pitch bound above 90 rejected
+
+PASS 08: nonfinite limit rejected
+
+PASS 09: default-unverified angle axes fail closed
+
+PASS 10: default-unverified gyro axes fail closed
+
+PASS 11: valid aligned degrees and radians
+
+PASS 12: body p/q rates stay radians per second and metadata preserved
+
+PASS 13: explicit verified sign inversion
+
+PASS 14: invalid diagnostic getter blocked
+
+PASS 15: NULL pose blocked without dereference
+
+PASS 16: missing ICM rate fails closed; no rate is fabricated
+
+PASS 17: unexpected report ID rejected
+
+PASS 18: quality below configured minimum rejected
+
+PASS 19: invalid SH-2 quality rejected
+
+PASS 20: NaN angle rejected
+
+PASS 21: nonfinite pitch rejected
+
+PASS 22: roll bound enforced
+
+PASS 23: pitch bound enforced
+
+PASS 24: NaN gyro rejected
+
+PASS 25: gyro range enforced
+
+PASS 26: attitude age 51ms rejected
+
+PASS 27: timestamp skew rejects unmatched samples
+
+PASS 28: gyro age 21ms rejected
+
+PASS 29: future timestamp rejected
+
+PASS 30: future gyro timestamp rejected
+
+PASS 31: timestamp skew beyond 15ms rejected
+
+PASS 32: future time rejects even when skew at boundary
+
+PASS 33: timestamp skew boundary inclusive 15ms
+
+PASS 34: repeated same sensor report rejected without stale data
+
+PASS 35: new sensor sequence restores feedback
+
+PASS 36: report sequence 255 to 0 wrap accepted
+
+PASS 37: HAL tick wrap supported with real timestamps
+
+PASS 38: HAL tick wrap still expires old reports
+
+PASS 39: evaluate pointer safety
+
+PASS 40: result text mapping
+
+=== RP FEEDBACK GATE UNIT: 40/40 PASS ===
+
+
+rp_parser_adapter_9 COMPILE: 0
+
+rp_parser_adapter_9 RUN: 0
+INTEGRATION PASS 1: actual SH-2 Q14 parser gives sensor angles
+
+INTEGRATION PASS 2: decoded roll/pitch units are degrees
+
+INTEGRATION PASS 3: real parser output converted to SI angle units with synthetic gyro
+
+INTEGRATION PASS 4: synthetic p/q preserved; rate was not invented by SH-2 parser
+
+INTEGRATION PASS 5: with real current project (no ICM driver), feedback NOT ready
+
+INTEGRATION PASS 6: failed diagnostic getter must block controller input
+
+INTEGRATION PASS 7: real parser quality status drives gate rejection
+
+INTEGRATION PASS 8: real Game RV report cannot silently enter Rotation Vector gate
+
+INTEGRATION PASS 9: sensor orientation must be verified outside simulation
+
+=== REAL SH2 PARSER ADAPTER: 9/9 PASS ===
+
+
+RP FEEDBACK GATE OFFLINE: PASS

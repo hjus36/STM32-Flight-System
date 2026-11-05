@@ -99,3 +99,12 @@ codegen/
 
 # Intentionally KEEP public PDF/PNG/GIF, MATLAB .m, Simulink .slx,
 # future measured CSV logs and selected generated C source.
+
+# Additional generated model/IDE artifacts (public source remains explicit)
+*.slx.r2026b
+*.autosave
+*.mldatx
+*.list
+*.cyclo
+.mxproject
+.settings/

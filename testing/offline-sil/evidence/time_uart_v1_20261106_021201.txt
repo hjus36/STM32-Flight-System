@@ -1,0 +1,119 @@
+=== dual_imu_previous_regression_44 ===
+PASS 01: before Init status unavailable
+PASS 02: default safety gate: zero ICM SPI
+PASS 03: default safety gate: zero ICM GPIO writes
+PASS 04: default init emits zero UART
+PASS 05: status query valid
+PASS 06: safety gate off is visible
+PASS 07: PID always disabled
+PASS 08: disabled status appears on UART
+PASS 09: axis and sync remain UNVERIFIED
+PASS 10: BNO getter read only
+PASS 11: no gyro line while disabled
+PASS 12: existing BNO getter reflected
+PASS 13: valid BNO without gyro never arms controller
+PASS 14: disabled service still never clocks SPI1
+PASS 15: explicit reviewed SPI1 invokes WHO_AM_I/config
+PASS 16: ICM configured calibration stage
+PASS 17: atomic SPI selected correct CS
+PASS 18: CS released after configuring
+PASS 19: status says CALIBRATING
+PASS 20: calibration cannot display fabricated rates
+PASS 21: calibration target defaults to 128
+PASS 22: 128 independent mock DRDY records complete cal
+PASS 23: last calibration sample not presented as rate
+PASS 24: first calibrated gyro record is fresh
+PASS 25: no body p/q or controller-ready asserted
+PASS 26: SENSOR frame telemetry emitted
+PASS 27: SENSOR X gyro approx +10 dps
+PASS 28: SENSOR Y bias near 0
+PASS 29: telemetry has no body frame claim
+PASS 30: SPI1 CS stays released
+PASS 31: valid BNO and ICM still do not authorize PID
+PASS 32: no DRDY does not invent fresh rate
+PASS 33: no DRDY does not write fake gyro telemetry
+PASS 34: UART transmission failures counted
+PASS 35: gyro saturation stops core
+PASS 36: fault blocks cached sample
+PASS 37: fault does not retry SPI
+PASS 38: wrong SPI instance rejected
+PASS 39: rejected SPI instance never causes traffic
+PASS 40: CS low rejected
+PASS 41: bad CS never clocks SPI
+PASS 42: incorrect WHO_AM_I latches fault
+PASS 43: incorrect ID fails no controller path
+PASS 44: status NULL guarded
+=== DUAL IMU DIAG MOCK STACK: 44/44 PASS ===
+REAL USER ICM DRIVER+HAL+BOARD MODULES; BNO PUBLIC GETTER MOCK; NO MCU/SENSOR/ESC/MOTOR
+
+=== dual_imu_time_uart_60 ===
+PASS 01: status unavailable before init
+PASS 02: safe init does not clock SPI1
+PASS 03: safe init does not toggle CS
+PASS 04: status starts initialized
+PASS 05: ICM remains gated off
+PASS 06: counter initially zero
+PASS 07: no feedback permission
+PASS 08: disabled telemetry identifies ICM_DISABLED
+PASS 09: first line states no timestamp
+PASS 10: first line states no gyro
+PASS 11: last skew is NA until observation
+PASS 12: UART explicitly retains gates
+PASS 13: no SPI1 activity after disabled Service
+PASS 14: read-only BNO getter called
+PASS 15: no sensor-axis telemetry if off
+PASS 16: BNO timestamp is visible even while ICM disabled
+PASS 17: ICM disabled forbids pairs
+PASS 18: gyro not forged
+PASS 19: missing gyro reported in status API
+PASS 20: no hardware SPI despite valid BNO
+PASS 21: no controller availability
+PASS 22: mock hardware review gate starts calibration
+PASS 23: calibration cannot give time pair
+PASS 24: stationary calibration complete
+PASS 25: no paired sample consumed during calibration
+PASS 26: no controller enable through calibration
+PASS 27: first fresh pair observed
+PASS 28: pair count increments
+PASS 29: receipt skew zero
+PASS 30: near_this_service true only for fresh pair
+PASS 31: BNO timed metadata remained valid
+PASS 32: ICM calibrated sensor sample remained valid
+PASS 33: even good time pair never enables PID
+PASS 34: duplicate pair blocked
+PASS 35: duplicates do not increase accepted count
+PASS 36: new gyro with old BNO blocked
+PASS 37: single-sensor refresh does not increase count
+PASS 38: two fresh records accepted
+PASS 39: count becomes 2
+PASS 40: axis unverified even if pair count 2
+PASS 41: host receipt skew >15ms rejected
+PASS 42: skew rejected without consuming history
+PASS 43: missing BNO timed getter detected
+PASS 44: expired gyro rejected and not fabricated
+PASS 45: once per second TIME line persisted
+PASS 46: accepted count appears on UART
+PASS 47: last accepted skew marked historical
+PASS 48: near-since-last line marks simulated observation
+PASS 49: the UART never asserts capture sync
+PASS 50: the UART never labels sensor XYZ as body rates
+PASS 51: no motor strings anywhere
+PASS 52: SPI never uses wrong bus
+PASS 53: sensor CS not left low
+PASS 54: good pair history does not enable PID
+PASS 55: UART failure accounted for
+PASS 56: UART failure cannot enable feedback
+PASS 57: gyroscope saturation latches fault
+PASS 58: fault does not retry hardware SPI
+PASS 59: fault never enables PID
+PASS 60: NULL status output rejected
+=== DUAL IMU TIME UART: 60/60 PASS ===
+SYNTHETIC SENSOR TIMESTAMPS; REAL ICM DRIVER+HAL+BOARD; NO PCB/ESC/MOTOR EXECUTION
+
+=== installer_safety_14 ===
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.347s
+
+OK
+
