@@ -34,6 +34,16 @@
 | PCB | 36×36 mm, 4-Layer, 1.2 mm 제조 조건 |
 | CAD | Altium Designer 26.3 |
 
+### PCB 3D 배치
+
+![Top: 중앙 STM32F405, 왼쪽 HSE, 오른쪽 PWM 헤더](hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Top_View.png)
+
+**Top** — 중앙의 STM32F405RGT6(U1), 왼쪽의 HSE 크리스털(Y1), 오른쪽의 18핀 PWM 헤더(J8)를 볼 수 있습니다.
+
+![Bottom: 부저와 인터페이스 부품, PWM 헤더의 관통 단자열](hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Bottom_View.png)
+
+**Bottom** — 뒷면에서 본 부저(BZ1)와 인터페이스 부품 배치입니다. 앞면 오른쪽의 J8 단자열이 이 시점에서는 왼쪽에 보입니다. 두 그림은 Altium Designer 26.3에서 직접 설계한 보드의 CAD 렌더링이며 실물 사진이 아닙니다.
+
 설계의 주요 검토 대상은 MCU 전원·VCAP·클록, 센서 디커플링, SPI 귀환 경로, 전원 기동, 외부 신호 보호, 장착홀과 커넥터의 간섭입니다. 제조 데이터는 저장 PCB와 구리·드릴·부품배치를 대조했습니다.
 
 - [회로도](hardware/LKM_FC_V1/schematic/LKM_FC_V1_Schematic.pdf): 5개 회로 블록
@@ -90,7 +100,7 @@ flowchart LR
 
 실제 LKM_FC_V1 MCU 실행, SPI 통신, 장착 축, 100Hz 지터, 수신기·배터리, ESC PWM·모터 및 비행 시험은 아직 수행하지 않았습니다. 부품·제조 조건을 확인한 뒤 전원/SWD → 센서/축 → 주기·통신 → 프로펠러 없는 ESC bench → 기체 통합 → 비행 순서로 별도 검증합니다.
 
-QAV210 계열 기체 통합은 예정입니다. PCB의 PWM6CH는 J8 18핀 헤더이며 현재 모의 Mixer는 4개 모터만 대상으로 합니다. J1·J4·J5·J8 수동 납땜, Molex J2·J3 공장 조립 방침을 유지합니다. 3D View 이미지는 제외했고 실물 사진·센서 데이터·비행 영상 폴더는 증거가 생긴 뒤 채웁니다.
+QAV210 계열 기체 통합은 예정입니다. PCB의 PWM6CH는 J8 18핀 헤더이며 현재 모의 Mixer는 4개 모터만 대상으로 합니다. J1·J4·J5·J8 수동 납땜, Molex J2·J3 공장 조립 방침을 유지합니다. 실물 사진·센서 데이터·비행 영상 폴더는 증거가 생긴 뒤 채웁니다.
 
 ## 로컬 재현
 

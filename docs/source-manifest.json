@@ -1,5 +1,5 @@
 {
-  "scope": "LOCAL_PORTFOLIO_SELECTION_NOT_PUBLISHED",
+  "scope": "PUBLISHED_MAIN_BASELINE_WITH_UNPUBLISHED_LOCAL_REVISION",
   "date": "2026-11-06",
   "source_root": "LKM project (private absolute path intentionally omitted)",
   "original_inventory_files": 69223,
@@ -911,11 +911,11 @@
       "destination": "firmware/stm32/LKM_BNO086_Bringup/Core/Src/main.c",
       "reason": "latest installed source / generated support",
       "source_sha256": "00bff6ee7f9b8f8437d7e94f78d824a3a8f8cc50d0948db1849ea4e77444d1fe",
-      "public_sha256": "00bff6ee7f9b8f8437d7e94f78d824a3a8f8cc50d0948db1849ea4e77444d1fe",
-      "size": 6077,
+      "public_sha256": "e4a94b93ac6e96143adecc01cd3062ccd25e0fd0d48ce25f1a2c26871afdf8a4",
+      "size": 6096,
       "source_mtime": "2026-11-06T03:42:02.829395",
-      "adapted": false,
-      "adaptation": "Byte-identical copy.",
+      "adapted": true,
+      "adaptation": "Portfolio copy only: move/correct SPI1 review-gate comment. No executable change.",
       "source_mtime_timezone": "Asia/Seoul"
     },
     {
@@ -1742,5 +1742,108 @@
       "input_sha256": "e326a9e2616627b3c9c04381fd790ff7476d128b04b94dc9c59434451621a432",
       "tool": "testing/offline-sil/tools/plot_sil.py / Matplotlib 3.10.6"
     }
-  ]
+  ],
+  "published_baseline": {
+    "repository": "https://github.com/hjus36/STM32-Flight-System",
+    "branch": "main",
+    "commit": "363c7335d5524b401b4512728298ffbce245d921",
+    "tracked_files": 191,
+    "verified_on": "2026-11-06"
+  },
+  "hash_semantics": {
+    "source_sha256": "Exact development-original bytes; source paths relative to source_root. Original inventory counts describe the prior survey.",
+    "public_sha256": "Bytes of the current local portfolio copy, not a claim of publication. Destination paths are relative to the repository root.",
+    "generated_outputs": "sha256 identifies each recorded synthetic output, unchanged from published_baseline.",
+    "local_revision": "Only the delta from published_baseline is listed. published_sha256 is null for new paths; local_sha256 is null for a local removal. The manifest excludes its own digest to avoid self-reference."
+  },
+  "local_revision": {
+    "status": "NOT_COMMITTED_OR_PUSHED",
+    "as_of": "2026-11-06",
+    "new_hardware_images": [
+      {
+        "source": "03_altium/LKM/LKM_FC_V1_3D_Top_View.png",
+        "destination": "hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Top_View.png",
+        "size": 579340,
+        "source_sha256": "826e165ed5526dcc4aa0bed874a7535d92d657cddf1dfeda98e4cc38db656e62",
+        "public_sha256": "826e165ed5526dcc4aa0bed874a7535d92d657cddf1dfeda98e4cc38db656e62",
+        "width_px": 1019,
+        "height_px": 1040,
+        "provenance": "User-rendered Altium Designer 26.3 board model; unmodified PNG; not a photograph.",
+        "status": "LOCAL_ONLY_NOT_PUBLISHED"
+      },
+      {
+        "source": "03_altium/LKM/LKM_FC_V1_3D_Bottom_View.png",
+        "destination": "hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Bottom_View.png",
+        "size": 799862,
+        "source_sha256": "26899b36dc878a7254861b9d0885e079ebaa9b1b5b915a5f22b394d6a03d3aa7",
+        "public_sha256": "26899b36dc878a7254861b9d0885e079ebaa9b1b5b915a5f22b394d6a03d3aa7",
+        "width_px": 1184,
+        "height_px": 1150,
+        "provenance": "User-rendered Altium Designer 26.3 board model; unmodified PNG; not a photograph.",
+        "status": "LOCAL_ONLY_NOT_PUBLISHED"
+      }
+    ],
+    "files": [
+      {
+        "destination": "README.md",
+        "published_sha256": "a645323457aba5a4bcb0675e1f1fd9467e0c7cca12d60da0795b00c55d7b2ebe",
+        "local_sha256": "650726f1b15bee46a56a7ebb779ca8d0836eca8557976f2cf1a7a51f92ac45fb",
+        "size": 9886
+      },
+      {
+        "destination": "docs/hardware-design.md",
+        "published_sha256": "fd1ec92d3151ec536566e9b9ffba2bde976381c87d3b09f1b66a5861391fc478",
+        "local_sha256": "3871fa44efae88503cb409fe0f77c56854d5a854f1159e379b390842516ae917",
+        "size": 4785
+      },
+      {
+        "destination": "docs/source-and-license.md",
+        "published_sha256": "184666b0c0431e8c0b486f23665c8ad18f2b6b03fd55a93a2673d27e39189859",
+        "local_sha256": "99d9383aeb0eca0d03883126ee349a6570c139b07d8b1b0aef6ea4ca5902772e",
+        "size": 6762
+      },
+      {
+        "destination": "docs/third-party-notices.md",
+        "published_sha256": "4fad358e38e5255633df43b11e5f9a07391178b6059ee925616d35ed7fc23954",
+        "local_sha256": "60af21612e265fed8b8556b2b382670e9d865b40991a23ff68034dcbdbeb6f47",
+        "size": 19209
+      },
+      {
+        "destination": "docs/validation.md",
+        "published_sha256": "0bb2f161af177328b1f3e593e5d729e007c52330fb3fba2f7f8527e887cb035a",
+        "local_sha256": "ec8333ea40ce8948aab45c9c1c8174a96849bbec91c58452302674d9451c9fc6",
+        "size": 7304
+      },
+      {
+        "destination": "firmware/generated/README.md",
+        "published_sha256": "15cd6e105352847f407a8687a15b5488de4b8771151be7a30469554406efe7d5",
+        "local_sha256": "e48c09c7947902f7ced1e8ba3f5dfdbbbe2f67343f9899d9b55b83ebb8665e97",
+        "size": 1657
+      },
+      {
+        "destination": "firmware/stm32/LKM_BNO086_Bringup/Core/Src/main.c",
+        "published_sha256": "00bff6ee7f9b8f8437d7e94f78d824a3a8f8cc50d0948db1849ea4e77444d1fe",
+        "local_sha256": "e4a94b93ac6e96143adecc01cd3062ccd25e0fd0d48ce25f1a2c26871afdf8a4",
+        "size": 6096
+      },
+      {
+        "destination": "hardware/LKM_FC_V1/3d-view/.gitkeep",
+        "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "local_sha256": null,
+        "size": null
+      },
+      {
+        "destination": "hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Bottom_View.png",
+        "published_sha256": null,
+        "local_sha256": "26899b36dc878a7254861b9d0885e079ebaa9b1b5b915a5f22b394d6a03d3aa7",
+        "size": 799862
+      },
+      {
+        "destination": "hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Top_View.png",
+        "published_sha256": null,
+        "local_sha256": "826e165ed5526dcc4aa0bed874a7535d92d657cddf1dfeda98e4cc38db656e62",
+        "size": 579340
+      }
+    ]
+  }
 }

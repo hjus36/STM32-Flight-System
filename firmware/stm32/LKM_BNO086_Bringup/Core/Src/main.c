@@ -102,8 +102,8 @@ int main(void)
 
     LKM_BNO086_Diag_Init();
     LKM_BNO086_UartDiag_Init();
-    LKM_DualIMU_Diag_Init(false);
-    LKM_FC100Hz_Bridge_Init(HAL_GetTick()); /* HARDWARE DISABLED until PCB review */
+    LKM_DualIMU_Diag_Init(false); /* ICM-20602 SPI1 access disabled until PCB verification */
+    LKM_FC100Hz_Bridge_Init(HAL_GetTick());
     LKM_AW_Shadow_Init(HAL_GetTick(), false); /* SHADOW OFF in firmware */
     LKM_RP_FrameMonitor_Init(); /* FRAME LOCKED; NO PID/ESC */
     LKM_FC_ActuatorMonitor_Init(); /* HARD LOCKED: NO ESC */

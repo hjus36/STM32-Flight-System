@@ -9,6 +9,7 @@
 | R10, 2026-10-30 | native 제조 출력과 로컬 CAM, DRC 기록 | 제조사 최종 수락·실물 동작 |
 | R11, 2026-10-31 / Stage157 | Gerber 13레이어 대조, native 배선·패드·GND, NC Drill, BOM/CPL 정합성 | EMI·열·센서 성능·비행 |
 | PDF 공개 자료, 2026-11-02 | 회로도 5페이지 / PCB 4페이지 / BOM 2페이지. 내용 유지, 회로도·PCB PDF의 개인 저자 메타데이터만 제거 | 새로운 CAD 변경 검증이나 제조 승인 |
+| Altium 3D 이미지, 2026-11-06 검토 | [Top](../hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Top_View.png)·[Bottom](../hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Bottom_View.png) 외형과 주요 부품 배치를 공개 Layout의 상·하면과 시각 대조 | 전체 풋프린트/핀 검증, 실물 조립성, 전기·비행 성능 |
 
 R11 로컬 결과는 96 Net / 448개 연결 핀, PTH 322 / NPTH 4, 공장 BOM 52 MPN 그룹 / CPL 139개(Top 70, Bottom 69)입니다. 누락 pad center, 분리 net 및 혼합 net 구리 그룹은 0건이었습니다. 이 결과는 해당 릴리스에 한정한 파일 비교입니다.
 

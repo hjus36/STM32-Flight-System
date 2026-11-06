@@ -2,6 +2,8 @@
 
 프로젝트 전체에 새 라이선스를 부여하지 않습니다. ST 원본 고지는 개별 파일에 유지했습니다. 아래는 사용한 component/template의 기존 조건 전달이며 HAL/CMSIS 전체 source를 복제한 것이 아닙니다.
 
+**MathWorks 생성 C/H:** 개별 파일에 있는 Academic 고지는 그대로 보존했습니다. 아래 ST 조건은 생성 C/H에 적용되지 않습니다. 소스·바이너리 배포의 구분과 확인이 필요한 항목은 [출처와 공개 범위](source-and-license.md)에 기록했습니다.
+
 ## CMSIS Device — Apache-2.0
 
 출처: https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-f4/master/LICENSE.md
