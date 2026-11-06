@@ -36,11 +36,11 @@
 
 ### PCB 3D 배치
 
-![Top: 중앙 STM32F405, 왼쪽 HSE, 오른쪽 PWM 헤더](hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Top_View.png)
+<img src="hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Top_View.png" alt="Top: 중앙 STM32F405, 왼쪽 HSE, 오른쪽 PWM 헤더" width="50%">
 
 **Top** — 중앙의 STM32F405RGT6(U1), 왼쪽의 HSE 크리스털(Y1), 오른쪽의 18핀 PWM 헤더(J8)를 볼 수 있습니다.
 
-![Bottom: 부저와 인터페이스 부품, PWM 헤더의 관통 단자열](hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Bottom_View.png)
+<img src="hardware/LKM_FC_V1/3d-view/LKM_FC_V1_3D_Bottom_View.png" alt="Bottom: 부저와 인터페이스 부품, PWM 헤더의 관통 단자열" width="50%">
 
 **Bottom** — 뒷면에서 본 부저(BZ1)와 인터페이스 부품 배치입니다. 앞면 오른쪽의 J8 단자열이 이 시점에서는 왼쪽에 보입니다. 두 그림은 Altium Designer 26.3에서 직접 설계한 보드의 CAD 렌더링이며 실물 사진이 아닙니다.
 
