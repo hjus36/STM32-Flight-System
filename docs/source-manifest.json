@@ -1,5 +1,5 @@
 {
-  "scope": "PUBLISHED_MAIN_BASELINE_WITH_UNPUBLISHED_LOCAL_REVISION",
+  "scope": "PUBLISHED_MAIN_WITH_HISTORICAL_BASELINE_AND_RELEASE_DELTA",
   "date": "2026-11-06",
   "source_root": "LKM project (private absolute path intentionally omitted)",
   "original_inventory_files": 69223,
@@ -1752,13 +1752,15 @@
   },
   "hash_semantics": {
     "source_sha256": "Exact development-original bytes; source paths relative to source_root. Original inventory counts describe the prior survey.",
-    "public_sha256": "Bytes of the current local portfolio copy, not a claim of publication. Destination paths are relative to the repository root.",
+    "public_sha256": "Recorded portfolio copy hashes at published_baseline; released changes from that baseline are documented in local_revision.files. Destination paths are relative to the repository root.",
     "generated_outputs": "sha256 identifies each recorded synthetic output, unchanged from published_baseline.",
-    "local_revision": "Only the delta from published_baseline is listed. published_sha256 is null for new paths; local_sha256 is null for a local removal. The manifest excludes its own digest to avoid self-reference."
+    "local_revision": "Historical delta from published_baseline, now published on main in commit e5829d1ca8933b9b4cfe7aa1670a5440aafb5596. In files, published_sha256 is the earlier baseline hash (null for additions) and local_sha256 is the released revision hash (null for removals). The key name preserves the original staging history. This manifest excludes its own digest to avoid self-reference."
   },
   "local_revision": {
-    "status": "NOT_COMMITTED_OR_PUSHED",
+    "status": "PUBLISHED_ON_MAIN",
     "as_of": "2026-11-06",
+    "published_branch": "main",
+    "published_commit": "e5829d1ca8933b9b4cfe7aa1670a5440aafb5596",
     "new_hardware_images": [
       {
         "source": "03_altium/LKM/LKM_FC_V1_3D_Top_View.png",
@@ -1769,7 +1771,7 @@
         "width_px": 1019,
         "height_px": 1040,
         "provenance": "User-rendered Altium Designer 26.3 board model; unmodified PNG; not a photograph.",
-        "status": "LOCAL_ONLY_NOT_PUBLISHED"
+        "status": "PUBLISHED_ON_MAIN"
       },
       {
         "source": "03_altium/LKM/LKM_FC_V1_3D_Bottom_View.png",
@@ -1780,7 +1782,7 @@
         "width_px": 1184,
         "height_px": 1150,
         "provenance": "User-rendered Altium Designer 26.3 board model; unmodified PNG; not a photograph.",
-        "status": "LOCAL_ONLY_NOT_PUBLISHED"
+        "status": "PUBLISHED_ON_MAIN"
       }
     ],
     "files": [
